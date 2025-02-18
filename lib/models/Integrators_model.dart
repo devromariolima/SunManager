@@ -1,9 +1,10 @@
 class Integrators {
   String name;
   String address;
+  String city;
   String cnpj;
-  String baseId;
   String icone;
+  String baseId;
   // DateTime timestamp;
   // double mudancaHora;
   // double mudancaDia;
@@ -13,11 +14,13 @@ class Integrators {
   // double mudancaPeriodoTotal;
 
   Integrators({
-    required this.baseId,
-    required this.icone,
     required this.name,
     required this.address,
+    required this.city,
     required this.cnpj,
+    required this.icone,
+    required this.baseId,
+
     // required this.timestamp,
     // required this.mudancaHora,
     // required this.mudancaDia,
@@ -30,11 +33,13 @@ class Integrators {
   // Método fromJson
   factory Integrators.fromJson(Map<String, dynamic> json) {
     return Integrators(
-      baseId: json['base_id'],
-      icone: json['icon'],
       name: json['name'],
-      address: json['symbol'],
+      address: json['address'],
+      city: json['city'],
       cnpj: json['cnpj'],
+      icone: json['icon'],
+      baseId: json['base_id'],
+
       // timestamp: DateTime.fromMillisecondsSinceEpoch(json['timestamp']),
       // mudancaHora: json['change_hour'].toDouble(),
       // mudancaDia: json['change_day'].toDouble(),
@@ -48,11 +53,13 @@ class Integrators {
 // Método toJson ajustado
   Map<String, dynamic> toJson() {
     return {
-      'base_id': baseId,
-      'icon': icone,
       'name': name,
       'symbol': address,
+      'city': city,
       'cnpj': cnpj,
+      'icon': icone,
+      'base_id': baseId,
+
       // 'timestamp': timestamp
       //     .millisecondsSinceEpoch, // Converte DateTime para milissegundos
       // 'change_hour': mudancaHora,
