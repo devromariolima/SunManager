@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:cripto/models/historico.dart';
-import 'package:cripto/models/moedas.dart';
+import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -1,5 +1,5 @@
 import 'package:cripto/configs/app_setings.dart';
-import 'package:cripto/models/moedas.dart';
+import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/moedas_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';

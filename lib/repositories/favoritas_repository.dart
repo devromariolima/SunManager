@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cripto/database/db_firestore.dart';
-import 'package:cripto/models/moedas.dart';
+import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 // import 'package:cripto/repositories/moeda_repository.dart';
 import 'package:cripto/services/auth_service.dart';

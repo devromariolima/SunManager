@@ -1,4 +1,4 @@
-import 'package:cripto/models/moedas.dart';
+import 'package:cripto/models/Integrators_model.dart';
 
 class Posicao {
   Integrators moeda;

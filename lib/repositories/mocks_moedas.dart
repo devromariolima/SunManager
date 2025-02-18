@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:cripto/models/moedas.dart';
+import 'package:cripto/models/Integrators_model.dart';
 
 class MoedaRepository {
   static List<Integrators> tabela = [
