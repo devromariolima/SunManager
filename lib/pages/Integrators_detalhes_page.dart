@@ -2,7 +2,7 @@ import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/repositories/conta_repository.dart';
 // import 'package:cripto/widget/grafico_historico.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MoedasDetalhesPage extends StatefulWidget {
@@ -15,7 +15,7 @@ class MoedasDetalhesPage extends StatefulWidget {
 }
 
 class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
-  final NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  // final NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _valor = TextEditingController();
   final TextEditingController _nomeEmpresa = TextEditingController();
