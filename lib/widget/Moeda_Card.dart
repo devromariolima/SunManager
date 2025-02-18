@@ -90,7 +90,7 @@ class _MoedaCardState extends State<MoedaCard> {
                 ),
                 child: Text(
                   real.format(widget.moeda
-                      .preco), // Corrigido de widget.moeda para widget.moedas
+                      .cnpj), // Corrigido de widget.moeda para widget.moedas
                   style: TextStyle(
                     fontSize: 16,
                     color: precoColor['down'],

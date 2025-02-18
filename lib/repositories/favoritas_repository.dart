@@ -51,7 +51,7 @@ class FavoritasRepository extends ChangeNotifier {
             .set({
           'moeda': moeda.nome,
           'sigla': moeda.sigla,
-          'preco': moeda.preco,
+          'preco': moeda.cnpj,
         });
       }
     });

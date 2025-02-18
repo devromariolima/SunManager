@@ -69,7 +69,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
     setState(() {
       totalCarteira = conta.saldo;
       for (var posicao in carteiraList) {
-        totalCarteira += posicao.moeda.preco * posicao.quantidade;
+        totalCarteira += posicao.moeda.cnpj * posicao.quantidade;
       }
     });
   }
@@ -82,7 +82,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
       graficoValor = conta.saldo;
     } else {
       graficoLabel = carteira[index].moeda.nome;
-      graficoValor = carteira[index].moeda.preco * carteira[index].quantidade;
+      graficoValor = carteira[index].moeda.cnpj * carteira[index].quantidade;
     }
   }
 
@@ -103,7 +103,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
             conta.saldo / totalCarteira; // Aqui você não acessa carteira[i]
       } else {
         porcentagem =
-            (carteira[i].moeda.preco * carteira[i].quantidade) / totalCarteira;
+            (carteira[i].moeda.cnpj * carteira[i].quantidade) / totalCarteira;
       }
       porcentagem *= 100;
 
@@ -181,7 +181,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
       widgets.add(ListTile(
         title: Text(operacao.moeda.nome),
         subtitle: Text(date.format(operacao.dataOperacao)),
-        trailing: Text(real.format(operacao.moeda.preco * operacao.quantidade)),
+        trailing: Text(real.format(operacao.moeda.cnpj * operacao.quantidade)),
       ));
       widgets.add(const Divider());
     }
