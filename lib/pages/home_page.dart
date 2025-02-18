@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.list), label: 'Integradores'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet), label: 'carteira'),
+              icon: Icon(Icons.account_balance_wallet), label: 'Graficos'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Conta'),
         ],
         onTap: (pagina) {

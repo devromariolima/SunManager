@@ -27,32 +27,32 @@ class _MoedasPageState extends State<MoedasPage> {
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
   }
 
-  chageLanguageButton() {
-    final locale = loc['locale'] == 'pt_BR' ? 'en_US' : 'pt_BR';
-    final name = loc['locale'] == 'pt_BR' ? '\$' : 'R\$';
+  // chageLanguageButton() {
+  //   final locale = loc['locale'] == 'pt_BR' ? 'en_US' : 'pt_BR';
+  //   final name = loc['locale'] == 'pt_BR' ? '\$' : 'R\$';
 
-    return PopupMenuButton(
-      icon: const Icon(Icons.language),
-      itemBuilder: (context) => [
-        PopupMenuItem(
-          child: ListTile(
-            leading: const Icon(Icons.swap_vert),
-            title: Text('Usar $locale'),
-            onTap: () {
-              context.read<AppSettings>().setLocale(locale, name);
-              Navigator.pop(context);
-            },
-          ),
-        ),
-      ],
-    );
-  }
+  //   return PopupMenuButton(
+  //     icon: const Icon(Icons.language),
+  //     itemBuilder: (context) => [
+  //       PopupMenuItem(
+  //         child: ListTile(
+  //           leading: const Icon(Icons.swap_vert),
+  //           title: Text('Usar $locale'),
+  //           onTap: () {
+  //             context.read<AppSettings>().setLocale(locale, name);
+  //             Navigator.pop(context);
+  //           },
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   appApbarDinamica() {
     if (selecionadas.isEmpty) {
       return AppBar(
         title: const Text('Esfera Admin'),
-        actions: [chageLanguageButton()],
+        // actions: [chageLanguageButton()],
         centerTitle: true, // Centraliza o título
         backgroundColor: Colors.blue, // Define a cor azul para a AppBar
       );
