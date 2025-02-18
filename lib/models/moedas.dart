@@ -3,7 +3,7 @@ class Integrators {
   String icone;
   String nome;
   String sigla;
-  double cnpj;
+  String cnpj;
   // DateTime timestamp;
   // double mudancaHora;
   // double mudancaDia;
@@ -34,7 +34,7 @@ class Integrators {
       icone: json['icon'],
       nome: json['name'],
       sigla: json['symbol'],
-      cnpj: json['price'].toDouble(),
+      cnpj: json['cnpj'],
       // timestamp: DateTime.fromMillisecondsSinceEpoch(json['timestamp']),
       // mudancaHora: json['change_hour'].toDouble(),
       // mudancaDia: json['change_day'].toDouble(),
@@ -52,7 +52,7 @@ class Integrators {
       'icon': icone,
       'name': nome,
       'symbol': sigla,
-      'price': cnpj,
+      'cnpj': cnpj,
       // 'timestamp': timestamp
       //     .millisecondsSinceEpoch, // Converte DateTime para milissegundos
       // 'change_hour': mudancaHora,

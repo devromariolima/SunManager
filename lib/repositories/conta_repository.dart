@@ -61,12 +61,12 @@ class ContaRepository extends ChangeNotifier {
       carteira.add({
         'sigla': moeda.sigla,
         'moeda': moeda.nome,
-        'quantidade': (valor / moeda.cnpj).toString(),
+        // 'quantidade': (valor / moeda.cnpj).toString(),
       });
     } else {
       // Atualiza a quantidade da moeda existente
-      double atual = double.parse(posicaoMoeda['quantidade']);
-      posicaoMoeda['quantidade'] = (atual + (valor / moeda.cnpj)).toString();
+      // double atual = double.parse(posicaoMoeda['quantidade']);
+      // posicaoMoeda['quantidade'] = (atual + (valor / moeda.cnpj)).toString();
     }
 
     // Atualizar a carteira no SharedPreferences
@@ -80,7 +80,7 @@ class ContaRepository extends ChangeNotifier {
     historico.add({
       'sigla': moeda.sigla,
       'moeda': moeda.nome,
-      'quantidade': (valor / moeda.cnpj).toString(),
+      // 'quantidade': (valor / moeda.cnpj).toString(),
       'valor': valor,
       'tipo_operacao': 'compra',
       'data_operacao': DateTime.now().millisecondsSinceEpoch,

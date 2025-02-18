@@ -19,6 +19,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _valor = TextEditingController();
   final TextEditingController _nomeEmpresa = TextEditingController();
+  final TextEditingController _taxId = TextEditingController();
   double quantidade = 0;
   late ContaRepository conta;
   Widget grafico = Container();
@@ -27,8 +28,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   @override
   void initState() {
     super.initState();
-    _nomeEmpresa.text =
-        widget.moeda.nome; // Preenchendo o campo com o nome da moeda
+    _nomeEmpresa.text = widget.moeda.nome;
+    _taxId.text = widget.moeda.cnpj; // Preenchendo o campo com o nome da moeda
   }
 
   // Widget getGrafico() {
@@ -127,6 +128,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            controller: _taxId,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),

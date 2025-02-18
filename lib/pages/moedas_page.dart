@@ -124,7 +124,7 @@ class _MoedasPageState extends State<MoedasPage> {
                   const Icon(Icons.circle, color: Colors.amber, size: 8),
               ],
             ),
-            trailing: Text(real.format(tabela[moeda].cnpj)),
+            trailing: Text((tabela[moeda].cnpj)),
             selected: selecionadas.contains(tabela[moeda]),
             selectedTileColor: Colors.indigo[50],
             onLongPress: () {
