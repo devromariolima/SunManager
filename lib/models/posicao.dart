@@ -1,7 +1,7 @@
 import 'package:cripto/models/moedas.dart';
 
 class Posicao {
-  Moeda moeda;
+  Integrators moeda;
 
   double quantidade;
 

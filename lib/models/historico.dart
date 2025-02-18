@@ -3,7 +3,7 @@ import 'package:cripto/models/moedas.dart';
 class Historico {
   DateTime dataOperacao;
   String tipoOperacao;
-  Moeda moeda;
+  Integrators moeda;
   double valor;
   double quantidade;
 

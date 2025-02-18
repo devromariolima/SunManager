@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MoedasDetalhesPage extends StatefulWidget {
-  final Moeda moeda;
+  final Integrators moeda;
 
   const MoedasDetalhesPage({super.key, required this.moeda});
 

@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MoedaCard extends StatefulWidget {
-  final Moeda
+  final Integrators
       moeda; // Corrigido para final, já que não será alterado após a construção
 
   MoedaCard({

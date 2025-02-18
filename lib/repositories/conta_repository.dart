@@ -40,7 +40,7 @@ class ContaRepository extends ChangeNotifier {
   }
 
   // Função de compra ajustada
-  comprar(Moeda moeda, double valor) async {
+  comprar(Integrators moeda, double valor) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     // Verificar se a moeda já foi comprada antes
@@ -107,7 +107,7 @@ class ContaRepository extends ChangeNotifier {
     if (carteiraStr != null) {
       List<dynamic> posicoes = jsonDecode(carteiraStr);
       for (var posicao in posicoes) {
-        Moeda moeda = MoedaRepository.tabela
+        Integrators moeda = MoedaRepository.tabela
             .firstWhere((m) => m.sigla == posicao['sigla']);
         _carteira.add(Posicao(
           moeda: moeda,
@@ -144,7 +144,7 @@ class ContaRepository extends ChangeNotifier {
 
       for (var operacao in operacoes) {
         // Busca a moeda pelo sigla
-        Moeda moeda = MoedaRepository.tabela.firstWhere(
+        Integrators moeda = MoedaRepository.tabela.firstWhere(
           (m) => m.sigla == operacao['sigla'],
         );
 

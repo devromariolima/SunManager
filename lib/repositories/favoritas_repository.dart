@@ -8,7 +8,7 @@ import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class FavoritasRepository extends ChangeNotifier {
-  final List<Moeda> _lista = [];
+  final List<Integrators> _lista = [];
   late FirebaseFirestore db;
   late AuthService auth;
   MoedaRepository moedas;
@@ -31,7 +31,7 @@ class FavoritasRepository extends ChangeNotifier {
       final snapshot =
           await db.collection('products/${auth.user!.uid}/favoritas').get();
       snapshot.docs.forEach((doc) {
-        Moeda moeda = MoedaRepository.tabela
+        Integrators moeda = MoedaRepository.tabela
             .firstWhere((moeda) => moeda.sigla == doc.get('sigla'));
         _lista.add(moeda);
         notifyListeners();
@@ -39,9 +39,9 @@ class FavoritasRepository extends ChangeNotifier {
     }
   }
 
-  UnmodifiableListView<Moeda> get lista => UnmodifiableListView(_lista);
+  UnmodifiableListView<Integrators> get lista => UnmodifiableListView(_lista);
 
-  saveAll(List<Moeda> moedas) {
+  saveAll(List<Integrators> moedas) {
     moedas.forEach((moeda) async {
       if (!_lista.any((atual) => atual.sigla == moeda.sigla)) {
         _lista.add(moeda);
@@ -59,7 +59,7 @@ class FavoritasRepository extends ChangeNotifier {
     notifyListeners();
   }
 
-  remove(Moeda moeda) async {
+  remove(Integrators moeda) async {
     await db
         .collection('products/${auth.user!.uid}/favoritas')
         .doc(moeda.sigla)

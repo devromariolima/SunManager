@@ -15,10 +15,10 @@ class MoedasPage extends StatefulWidget {
 }
 
 class _MoedasPageState extends State<MoedasPage> {
-  late List<Moeda> tabela;
+  late List<Integrators> tabela;
   late NumberFormat real;
   late Map<String, String> loc;
-  List<Moeda> selecionadas = [];
+  List<Integrators> selecionadas = [];
   late FavoritasRepository favoritas;
   late MoedaRepository moedas;
 
@@ -74,7 +74,7 @@ class _MoedasPageState extends State<MoedasPage> {
     }
   }
 
-  mostrarDetalhes(Moeda moeda) {
+  mostrarDetalhes(Integrators moeda) {
     Navigator.push(
       context,
       MaterialPageRoute(

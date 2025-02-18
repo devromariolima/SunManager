@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class GraficoHistorico extends StatefulWidget {
-  final Moeda moeda;
+  final Integrators moeda;
 
   GraficoHistorico({super.key, required this.moeda});
 

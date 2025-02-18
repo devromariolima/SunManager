@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:cripto/models/moedas.dart';
 
 class MoedaRepository {
-  static List<Moeda> tabela = [
-    Moeda(
+  static List<Integrators> tabela = [
+    Integrators(
       icone: 'https://i.imgur.com/V45bRQq.png',
       nome: 'Solarium Tech',
       sigla: 'BTC',
@@ -17,7 +17,7 @@ class MoedaRepository {
       mudancaAno: 45.0,
       mudancaPeriodoTotal: 150.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/ICEbb90.png',
       nome: 'EnerSun Integradores',
       sigla: 'ETH',
@@ -31,7 +31,7 @@ class MoedaRepository {
       mudancaAno: 38.5,
       mudancaPeriodoTotal: 120.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/p5LOBMG.png',
       nome: 'BrightVolt Energia',
       sigla: 'AVAX',
@@ -45,7 +45,7 @@ class MoedaRepository {
       mudancaAno: 20.0,
       mudancaPeriodoTotal: 85.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/NCSAD6h.png',
       nome: 'Solaris Soluções',
       sigla: 'BNB',
@@ -59,7 +59,7 @@ class MoedaRepository {
       mudancaAno: 15.0,
       mudancaPeriodoTotal: 60.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/ikeUlJl.png',
       nome: 'EcoSun Engenharia',
       sigla: 'ADA',
@@ -73,7 +73,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/4455dEw.png',
       nome: 'Photon Power',
       sigla: 'LINK',
@@ -87,7 +87,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/YKdWmqq.png',
       nome: 'SolTech Renováveis',
       sigla: 'DOGE',
@@ -101,7 +101,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/J9Yd5Sr.png',
       nome: 'Verde Luz Sistemas',
       sigla: 'WSTETH',
@@ -115,7 +115,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/HbzqG0p.png',
       nome: 'Helios Engenharia Solar',
       sigla: 'Litecoin',
@@ -129,7 +129,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/CumXwMQ.png',
       nome: 'Lumina Solar Solutions',
       sigla: 'SHIB',
@@ -143,7 +143,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/HgIoRC1.png',
       nome: 'SunVolt Serviços',
       sigla: 'SOL',
@@ -157,7 +157,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/Wu9UNH9.png',
       nome: 'BlueSky Energia',
       sigla: 'SUI',
@@ -171,7 +171,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/3SDQd15.png',
       nome: 'SolarWay Integradores',
       sigla: 'USDT',
@@ -185,7 +185,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/GIRHKI4.png',
       nome: 'PowerGreen Engenharia',
       sigla: 'TON',
@@ -199,7 +199,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/EgBiNHF.png',
       nome: 'SolSmart Soluções',
       sigla: 'LEO',
@@ -213,7 +213,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/6v5Wlpd.jpg',
       nome: 'EcoLight Energia',
       sigla: 'USDS',
@@ -227,7 +227,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/Wz5FLNC.png',
       nome: 'Aurora Solar Experts',
       sigla: 'WETH',
@@ -241,7 +241,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/G0AzDls.png',
       nome: 'HelioVolt Instalações',
       sigla: 'WBTC',
@@ -255,7 +255,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/rS1EFZU.png',
       nome: 'SunFlow Energia',
       sigla: 'WTRX',
@@ -269,7 +269,7 @@ class MoedaRepository {
       mudancaAno: 25.0,
       mudancaPeriodoTotal: 90.0,
     ),
-    Moeda(
+    Integrators(
       icone: 'https://i.imgur.com/ULtju8G.png',
       nome: 'NovaEnergia Integradores',
       sigla: 'XRP',

@@ -1,4 +1,4 @@
-class Moeda {
+class Integrators {
   String baseId;
   String icone;
   String nome;
@@ -12,7 +12,7 @@ class Moeda {
   double mudancaAno;
   double mudancaPeriodoTotal;
 
-  Moeda({
+  Integrators({
     required this.baseId,
     required this.icone,
     required this.nome,
@@ -28,8 +28,8 @@ class Moeda {
   });
 
   // Método fromJson
-  factory Moeda.fromJson(Map<String, dynamic> json) {
-    return Moeda(
+  factory Integrators.fromJson(Map<String, dynamic> json) {
+    return Integrators(
       baseId: json['base_id'],
       icone: json['icon'],
       nome: json['name'],
