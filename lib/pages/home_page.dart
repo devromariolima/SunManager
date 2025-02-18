@@ -1,7 +1,7 @@
 import 'package:cripto/pages/Configuracoes_page.dart';
 import 'package:cripto/pages/carteira_page.dart';
 import 'package:cripto/pages/favoritas_page.dart';
-import 'package:cripto/pages/moedas_page.dart';
+import 'package:cripto/pages/Integrators_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

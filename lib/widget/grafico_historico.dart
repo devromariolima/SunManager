@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 class GraficoHistorico extends StatefulWidget {
   final Integrators moeda;
 
-  GraficoHistorico({super.key, required this.moeda});
+  const GraficoHistorico({super.key, required this.moeda});
 
   @override
   State<GraficoHistorico> createState() => _GraficoHistoricoState();
