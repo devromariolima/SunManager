@@ -28,7 +28,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   @override
   void initState() {
     super.initState();
-    _nomeEmpresa.text = widget.moeda.nome;
+    _nomeEmpresa.text = widget.moeda.name;
     _taxId.text = widget.moeda.cnpj; // Preenchendo o campo com o nome da moeda
   }
 
@@ -55,7 +55,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     conta = Provider.of<ContaRepository>(context, listen: false);
 
     return Scaffold(
-      appBar: AppBar(title: Text(widget.moeda.nome)),
+      appBar: AppBar(title: Text(widget.moeda.name)),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(

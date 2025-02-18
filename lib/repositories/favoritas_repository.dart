@@ -49,7 +49,7 @@ class FavoritasRepository extends ChangeNotifier {
             .collection('products/${auth.user!.uid}/favoritas')
             .doc(moeda.address)
             .set({
-          'moeda': moeda.nome,
+          'moeda': moeda.name,
           'sigla': moeda.address,
           'preco': moeda.cnpj,
         });

@@ -81,7 +81,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
       graficoLabel = 'saldo';
       graficoValor = conta.saldo;
     } else {
-      graficoLabel = carteira[index].moeda.nome;
+      graficoLabel = carteira[index].moeda.name;
       // graficoValor = carteira[index].moeda.cnpj * carteira[index].quantidade;
     }
   }
@@ -179,7 +179,7 @@ class _CarteiraPageState extends State<CarteiraPage> {
     List<Widget> widgets = [];
     for (var operacao in historico) {
       widgets.add(ListTile(
-        title: Text(operacao.moeda.nome),
+        title: Text(operacao.moeda.name),
         subtitle: Text(date.format(operacao.dataOperacao)),
         // trailing: Text(real.format(operacao.moeda.cnpj * operacao.quantidade)),
       ));

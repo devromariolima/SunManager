@@ -60,7 +60,7 @@ class ContaRepository extends ChangeNotifier {
     if (posicaoMoeda == null) {
       carteira.add({
         'sigla': moeda.address,
-        'moeda': moeda.nome,
+        'moeda': moeda.name,
         // 'quantidade': (valor / moeda.cnpj).toString(),
       });
     } else {
@@ -79,7 +79,7 @@ class ContaRepository extends ChangeNotifier {
 
     historico.add({
       'sigla': moeda.address,
-      'moeda': moeda.nome,
+      'moeda': moeda.name,
       // 'quantidade': (valor / moeda.cnpj).toString(),
       'valor': valor,
       'tipo_operacao': 'compra',

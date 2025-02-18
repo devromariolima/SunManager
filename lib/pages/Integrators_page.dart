@@ -114,7 +114,7 @@ class _MoedasPageState extends State<MoedasPage> {
             title: Row(
               children: [
                 Text(
-                  tabela[moeda].nome,
+                  tabela[moeda].name,
                   style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w500,

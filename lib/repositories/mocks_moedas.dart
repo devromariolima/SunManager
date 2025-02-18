@@ -5,7 +5,7 @@ class MoedaRepository {
   static List<Integrators> tabela = [
     Integrators(
       icone: 'https://i.imgur.com/V45bRQq.png',
-      nome: 'Solarium Tech',
+      name: 'Solarium Tech',
       address: 'BTC',
       cnpj: '79.740.522/0001-93',
       baseId: 'bitcoin',
@@ -19,7 +19,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/ICEbb90.png',
-      nome: 'EnerSun Integradores',
+      name: 'EnerSun Integradores',
       address: 'ETH',
       cnpj: '94.512.358/0001-40',
       baseId: 'ethereum',
@@ -33,7 +33,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/p5LOBMG.png',
-      nome: 'BrightVolt Energia',
+      name: 'BrightVolt Energia',
       address: 'AVAX',
       cnpj: '47.108.417/0001-61',
       baseId: 'AVAX',
@@ -47,7 +47,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/NCSAD6h.png',
-      nome: 'Solaris Soluções',
+      name: 'Solaris Soluções',
       address: 'BNB',
       cnpj: '23.518.093/0001-71',
       baseId: 'BNB',
@@ -61,7 +61,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/ikeUlJl.png',
-      nome: 'EcoSun Engenharia',
+      name: 'EcoSun Engenharia',
       address: 'ADA',
       cnpj: '60.903.619/0001-32',
       baseId: 'Cardano',
@@ -75,7 +75,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/4455dEw.png',
-      nome: 'Photon Power',
+      name: 'Photon Power',
       address: 'LINK',
       cnpj: '09.471.322/0001-88',
       baseId: 'Chainlink',
@@ -89,7 +89,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/YKdWmqq.png',
-      nome: 'SolTech Renováveis',
+      name: 'SolTech Renováveis',
       address: 'DOGE',
       cnpj: '30.173.681/0001-70',
       baseId: 'Chainlink',
@@ -103,7 +103,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/J9Yd5Sr.png',
-      nome: 'Verde Luz Sistemas',
+      name: 'Verde Luz Sistemas',
       address: 'WSTETH',
       cnpj: '82.649.476/0001-20',
       baseId: 'WSTETH',
@@ -117,7 +117,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/HbzqG0p.png',
-      nome: 'Helios Engenharia Solar',
+      name: 'Helios Engenharia Solar',
       address: 'Litecoin',
       cnpj: '42.174.989/0001-37',
       baseId: 'Chainlink',
@@ -131,7 +131,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/CumXwMQ.png',
-      nome: 'Lumina Solar Solutions',
+      name: 'Lumina Solar Solutions',
       address: 'SHIB',
       cnpj: '55.913.370/0001-58',
       baseId: 'SHIB',
@@ -145,7 +145,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/HgIoRC1.png',
-      nome: 'SunVolt Serviços',
+      name: 'SunVolt Serviços',
       address: 'SOL',
       cnpj: '36.627.101/0001-09',
       baseId: 'SHIB',
@@ -159,7 +159,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/Wu9UNH9.png',
-      nome: 'BlueSky Energia',
+      name: 'BlueSky Energia',
       address: 'SUI',
       cnpj: '26.392.745/0001-54',
       baseId: 'SUI',
@@ -173,7 +173,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/3SDQd15.png',
-      nome: 'SolarWay Integradores',
+      name: 'SolarWay Integradores',
       address: 'USDT',
       cnpj: '98.142.367/0001-10',
       baseId: 'Tether',
@@ -187,7 +187,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/GIRHKI4.png',
-      nome: 'PowerGreen Engenharia',
+      name: 'PowerGreen Engenharia',
       address: 'TON',
       cnpj: '69.801.235/0001-29',
       baseId: 'Toncoin',
@@ -201,7 +201,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/EgBiNHF.png',
-      nome: 'SolSmart Soluções',
+      name: 'SolSmart Soluções',
       address: 'LEO',
       cnpj: '04.125.769/0001-44',
       baseId: 'UNUS SED LEO',
@@ -215,7 +215,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/6v5Wlpd.jpg',
-      nome: 'EcoLight Energia',
+      name: 'EcoLight Energia',
       address: 'USDS',
       cnpj: '85.671.292/0001-31',
       baseId: 'USDS',
@@ -229,7 +229,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/Wz5FLNC.png',
-      nome: 'Aurora Solar Experts',
+      name: 'Aurora Solar Experts',
       address: 'WETH',
       cnpj: '77.301.812/0001-47',
       baseId: 'WETH',
@@ -243,7 +243,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/G0AzDls.png',
-      nome: 'HelioVolt Instalações',
+      name: 'HelioVolt Instalações',
       address: 'WBTC',
       cnpj: '12.438.576/0001-95',
       baseId: 'WBTC',
@@ -257,7 +257,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/rS1EFZU.png',
-      nome: 'SunFlow Energia',
+      name: 'SunFlow Energia',
       address: 'WTRX',
       cnpj: '53.870.604/0001-6',
       baseId: 'WTRX',
@@ -271,7 +271,7 @@ class MoedaRepository {
     ),
     Integrators(
       icone: 'https://i.imgur.com/ULtju8G.png',
-      nome: 'NovaEnergia Integradores',
+      name: 'NovaEnergia Integradores',
       address: 'XRP',
       cnpj: '66.015.398/0001-11',
       baseId: 'WTRX',

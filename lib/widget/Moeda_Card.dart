@@ -60,7 +60,7 @@ class _MoedaCardState extends State<MoedaCard> {
                     children: [
                       Text(
                         widget.moeda
-                            .nome, // Corrigido de widget.moeda para widget.moedas
+                            .name, // Corrigido de widget.moeda para widget.moedas
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,

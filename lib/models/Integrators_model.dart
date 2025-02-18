@@ -1,5 +1,5 @@
 class Integrators {
-  String nome;
+  String name;
   String address;
   String cnpj;
   String baseId;
@@ -15,7 +15,7 @@ class Integrators {
   Integrators({
     required this.baseId,
     required this.icone,
-    required this.nome,
+    required this.name,
     required this.address,
     required this.cnpj,
     // required this.timestamp,
@@ -32,7 +32,7 @@ class Integrators {
     return Integrators(
       baseId: json['base_id'],
       icone: json['icon'],
-      nome: json['name'],
+      name: json['name'],
       address: json['symbol'],
       cnpj: json['cnpj'],
       // timestamp: DateTime.fromMillisecondsSinceEpoch(json['timestamp']),
@@ -50,7 +50,7 @@ class Integrators {
     return {
       'base_id': baseId,
       'icon': icone,
-      'name': nome,
+      'name': name,
       'symbol': address,
       'cnpj': cnpj,
       // 'timestamp': timestamp
