@@ -50,7 +50,7 @@ class ContaRepository extends ChangeNotifier {
     // Buscar a moeda pela sigla
     Map<String, dynamic>? posicaoMoeda;
     for (var posicao in carteira) {
-      if (posicao['sigla'] == moeda.sigla) {
+      if (posicao['sigla'] == moeda.address) {
         posicaoMoeda = posicao;
         break;
       }
@@ -59,7 +59,7 @@ class ContaRepository extends ChangeNotifier {
     // Se a moeda não foi comprada antes, insere nova posição
     if (posicaoMoeda == null) {
       carteira.add({
-        'sigla': moeda.sigla,
+        'sigla': moeda.address,
         'moeda': moeda.nome,
         // 'quantidade': (valor / moeda.cnpj).toString(),
       });
@@ -78,7 +78,7 @@ class ContaRepository extends ChangeNotifier {
         historicoStr != null ? jsonDecode(historicoStr) : [];
 
     historico.add({
-      'sigla': moeda.sigla,
+      'sigla': moeda.address,
       'moeda': moeda.nome,
       // 'quantidade': (valor / moeda.cnpj).toString(),
       'valor': valor,
@@ -108,7 +108,7 @@ class ContaRepository extends ChangeNotifier {
       List<dynamic> posicoes = jsonDecode(carteiraStr);
       for (var posicao in posicoes) {
         Integrators moeda = MoedaRepository.tabela
-            .firstWhere((m) => m.sigla == posicao['sigla']);
+            .firstWhere((m) => m.address == posicao['sigla']);
         _carteira.add(Posicao(
           moeda: moeda,
           quantidade: double.parse(posicao['quantidade']),
@@ -145,7 +145,7 @@ class ContaRepository extends ChangeNotifier {
       for (var operacao in operacoes) {
         // Busca a moeda pelo sigla
         Integrators moeda = MoedaRepository.tabela.firstWhere(
-          (m) => m.sigla == operacao['sigla'],
+          (m) => m.address == operacao['sigla'],
         );
 
         // Adiciona a operação no histórico
@@ -176,7 +176,7 @@ class ContaRepository extends ChangeNotifier {
 
     // Adiciona a nova operação no histórico
     historico.add({
-      'sigla': novaOperacao.moeda.sigla,
+      'sigla': novaOperacao.moeda.address,
       'data_operacao': novaOperacao.dataOperacao.millisecondsSinceEpoch,
       'tipo_operacao': novaOperacao.tipoOperacao,
       'valor': novaOperacao.valor,

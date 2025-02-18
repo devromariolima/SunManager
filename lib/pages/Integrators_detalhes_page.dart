@@ -105,7 +105,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
               color: Colors.teal.withOpacity(0.05),
             ),
             child: Text(
-              '$quantidade ${widget.moeda.sigla}',
+              '$quantidade ${widget.moeda.address}',
               style: const TextStyle(fontSize: 20, color: Colors.teal),
             ),
           )

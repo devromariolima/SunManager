@@ -1,9 +1,9 @@
 class Integrators {
+  String nome;
+  String address;
+  String cnpj;
   String baseId;
   String icone;
-  String nome;
-  String sigla;
-  String cnpj;
   // DateTime timestamp;
   // double mudancaHora;
   // double mudancaDia;
@@ -16,7 +16,7 @@ class Integrators {
     required this.baseId,
     required this.icone,
     required this.nome,
-    required this.sigla,
+    required this.address,
     required this.cnpj,
     // required this.timestamp,
     // required this.mudancaHora,
@@ -33,7 +33,7 @@ class Integrators {
       baseId: json['base_id'],
       icone: json['icon'],
       nome: json['name'],
-      sigla: json['symbol'],
+      address: json['symbol'],
       cnpj: json['cnpj'],
       // timestamp: DateTime.fromMillisecondsSinceEpoch(json['timestamp']),
       // mudancaHora: json['change_hour'].toDouble(),
@@ -51,7 +51,7 @@ class Integrators {
       'base_id': baseId,
       'icon': icone,
       'name': nome,
-      'symbol': sigla,
+      'symbol': address,
       'cnpj': cnpj,
       // 'timestamp': timestamp
       //     .millisecondsSinceEpoch, // Converte DateTime para milissegundos

@@ -32,7 +32,7 @@ class FavoritasRepository extends ChangeNotifier {
           await db.collection('products/${auth.user!.uid}/favoritas').get();
       snapshot.docs.forEach((doc) {
         Integrators moeda = MoedaRepository.tabela
-            .firstWhere((moeda) => moeda.sigla == doc.get('sigla'));
+            .firstWhere((moeda) => moeda.address == doc.get('sigla'));
         _lista.add(moeda);
         notifyListeners();
       });
@@ -43,14 +43,14 @@ class FavoritasRepository extends ChangeNotifier {
 
   saveAll(List<Integrators> moedas) {
     moedas.forEach((moeda) async {
-      if (!_lista.any((atual) => atual.sigla == moeda.sigla)) {
+      if (!_lista.any((atual) => atual.address == moeda.address)) {
         _lista.add(moeda);
         await db
             .collection('products/${auth.user!.uid}/favoritas')
-            .doc(moeda.sigla)
+            .doc(moeda.address)
             .set({
           'moeda': moeda.nome,
-          'sigla': moeda.sigla,
+          'sigla': moeda.address,
           'preco': moeda.cnpj,
         });
       }
@@ -62,7 +62,7 @@ class FavoritasRepository extends ChangeNotifier {
   remove(Integrators moeda) async {
     await db
         .collection('products/${auth.user!.uid}/favoritas')
-        .doc(moeda.sigla)
+        .doc(moeda.address)
         .delete();
     _lista.remove(moeda);
     notifyListeners();

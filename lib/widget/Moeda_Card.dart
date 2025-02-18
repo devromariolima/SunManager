@@ -2,7 +2,7 @@ import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class MoedaCard extends StatefulWidget {
@@ -19,7 +19,7 @@ class MoedaCard extends StatefulWidget {
 }
 
 class _MoedaCardState extends State<MoedaCard> {
-  NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+  // NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
 
   static Map<String, Color> precoColor = <String, Color>{
     'up': Colors.teal,
@@ -68,7 +68,7 @@ class _MoedaCardState extends State<MoedaCard> {
                       ),
                       Text(
                         widget.moeda
-                            .sigla, // Corrigido de widget.moeda para widget.moedas
+                            .address, // Corrigido de widget.moeda para widget.moedas
                         style: const TextStyle(
                           fontSize: 13,
                           color: Colors.black45,
@@ -89,7 +89,7 @@ class _MoedaCardState extends State<MoedaCard> {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Text(
-                  real.format(widget.moeda
+                  (widget.moeda
                       .cnpj), // Corrigido de widget.moeda para widget.moedas
                   style: TextStyle(
                     fontSize: 16,
