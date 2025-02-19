@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       isLogin = acao;
       if (isLogin) {
-        titulo = 'Crypto Currencies';
+        titulo = 'Esfera Admin';
         actionButton = 'Login';
         toggleButton = 'Ainda não tem conta? Cadastre-se agora!';
       } else {
@@ -193,7 +193,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'lib/assets/images/background.jpeg',
+              'lib/assets/images/login_background.png',
               fit: BoxFit.cover,
             ),
           ),
