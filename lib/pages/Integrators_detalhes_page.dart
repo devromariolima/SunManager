@@ -20,6 +20,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final TextEditingController _valor = TextEditingController();
   final TextEditingController _nomeEmpresa = TextEditingController();
   final TextEditingController _taxId = TextEditingController();
+  final TextEditingController _city = TextEditingController();
+  final TextEditingController _address = TextEditingController();
   double quantidade = 0;
   late ContaRepository conta;
   Widget grafico = Container();
@@ -30,6 +32,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     super.initState();
     _nomeEmpresa.text = widget.moeda.name;
     _taxId.text = widget.moeda.cnpj; // Preenchendo o campo com o nome da moeda
+    _city.text = widget.moeda.city;
+    _address.text = widget.moeda.address;
   }
 
   // Widget getGrafico() {
@@ -139,6 +143,17 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            controller: _city,
+            style: const TextStyle(fontSize: 22),
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Cidade',
+              prefixIcon: Icon(Icons.location_city),
+            ),
+          ),
+          const SizedBox(height: 10),
+          TextFormField(
+            controller: _address,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),

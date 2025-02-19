@@ -2,6 +2,7 @@ class Integrators {
   String name;
   String address;
   String city;
+  String zipcode;
   String cnpj;
   String icone;
   String baseId;
@@ -17,6 +18,7 @@ class Integrators {
     required this.name,
     required this.address,
     required this.city,
+    required this.zipcode,
     required this.cnpj,
     required this.icone,
     required this.baseId,
@@ -36,6 +38,7 @@ class Integrators {
       name: json['name'],
       address: json['address'],
       city: json['city'],
+      zipcode: json['zip_code'],
       cnpj: json['cnpj'],
       icone: json['icon'],
       baseId: json['base_id'],
@@ -54,8 +57,9 @@ class Integrators {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'symbol': address,
+      'address': address,
       'city': city,
+      'zipCode': zipcode,
       'cnpj': cnpj,
       'icon': icone,
       'base_id': baseId,
