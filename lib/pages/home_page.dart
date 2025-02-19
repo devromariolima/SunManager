@@ -2,6 +2,7 @@ import 'package:cripto/pages/Configuracoes_page.dart';
 import 'package:cripto/pages/carteira_page.dart';
 import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/Integrators_page.dart';
+import 'package:cripto/pages/products_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
         controller: pc,
         children: [
           MoedasPage(),
+          ProductsPage(),
           FavoritasPage(),
           CarteiraPage(),
           ConfiguracoesPage(),
@@ -46,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.list), label: 'Integradores'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Estoque'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
           BottomNavigationBarItem(
               icon: Icon(Icons.auto_graph), label: 'Graficos'),

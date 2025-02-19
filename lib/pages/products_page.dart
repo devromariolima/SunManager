@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class MoedasPage extends StatefulWidget {
-  const MoedasPage({super.key});
+class ProductsPage extends StatefulWidget {
+  const ProductsPage({super.key});
 
   @override
-  State<MoedasPage> createState() => _MoedasPageState();
+  State<ProductsPage> createState() => _ProductsPageState();
 }
 
-class _MoedasPageState extends State<MoedasPage> {
+class _ProductsPageState extends State<ProductsPage> {
   late List<Integrators> tabela;
   late NumberFormat real;
   late Map<String, String> loc;
@@ -51,7 +51,7 @@ class _MoedasPageState extends State<MoedasPage> {
   appApbarDinamica() {
     if (selecionadas.isEmpty) {
       return AppBar(
-        title: const Text('Integradores'),
+        title: const Text('Estoque'),
         // actions: [chageLanguageButton()],
         centerTitle: true, // Centraliza o título
         backgroundColor: Colors.blue, // Define a cor azul para a AppBar
