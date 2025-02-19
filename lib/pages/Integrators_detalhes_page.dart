@@ -203,7 +203,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
             Padding(
               padding: EdgeInsets.all(16),
               child: Text(
-                'Comprar',
+                'Salvar',
                 style: TextStyle(fontSize: 20),
               ),
             ),
