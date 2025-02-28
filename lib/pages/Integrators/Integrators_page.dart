@@ -52,15 +52,14 @@ class _MoedasPageState extends State<MoedasPage> {
     if (selecionadas.isEmpty) {
       return AppBar(
         title: const Text('Integradores'),
-        // actions: [chageLanguageButton()],
-        centerTitle: true, // Centraliza o título
+        centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
         ],
-        backgroundColor: Colors.blue, // Define a cor azul para a AppBar
+        backgroundColor: Colors.blue,
         leading: IconButton(
             onPressed: () {},
             icon: IconButton(onPressed: () {}, icon: const Icon(Icons.menu))),
