@@ -193,16 +193,30 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
           Row(
             children: [
               Checkbox(
-                value: _isActive, // Valor booleano do estado
+                value: _isActive,
                 onChanged: (bool? value) {
                   setState(() {
-                    // _cadastroAtivo = value ?? false; // Atualiza o estado
+                    _isActive = value ?? false;
                   });
                 },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                activeColor: Colors.blue,
+                checkColor: Colors.white,
+                side: BorderSide(
+                  color: Colors.grey.shade400,
+                  width: 2,
+                ),
               ),
+              const SizedBox(width: 10),
               const Text(
                 'Cadastro Ativo',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black87,
+                ),
               ),
             ],
           ),
