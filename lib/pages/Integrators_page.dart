@@ -75,12 +75,25 @@ class _MoedasPageState extends State<MoedasPage> {
   }
 
   mostrarDetalhes(Integrators moeda) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => MoedasDetalhesPage(moeda: moeda),
-      ),
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
+
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => MoedasDetalhesPage(moeda: moeda),
+        ),
+      );
+    });
   }
 
   limparSelecionadas() {
