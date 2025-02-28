@@ -4,6 +4,7 @@ import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/Integrators_page.dart';
 import 'package:cripto/pages/products_page.dart';
 import 'package:flutter/material.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,23 +43,27 @@ class _HomePageState extends State<HomePage> {
         ],
         onPageChanged: setPaginAtual,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: paginaAtual,
-        type: BottomNavigationBarType.fixed,
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.grey[100]!,
+        color: Colors.blueAccent,
+        height: 60,
+        animationDuration: Duration(milliseconds: 300),
+        index: paginaAtual,
         items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.list), label: 'Integradores'),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Estoque'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.auto_graph), label: 'Graficos'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Conta'),
+          Icon(Icons.list, size: 30, color: Colors.white),
+          Icon(Icons.list, size: 30, color: Colors.white),
+          Icon(Icons.star, size: 30, color: Colors.white),
+          Icon(Icons.auto_graph, size: 30, color: Colors.white),
+          Icon(Icons.settings, size: 30, color: Colors.white),
         ],
         onTap: (pagina) {
-          pc.animateToPage(pagina,
-              duration: const Duration(milliseconds: 400), curve: Curves.ease);
+          pc.animateToPage(
+            pagina,
+            duration: Duration(milliseconds: 400),
+            curve: Curves.ease,
+          );
+          setPaginAtual(pagina);
         },
-        backgroundColor: Colors.grey[100],
       ),
     );
   }
