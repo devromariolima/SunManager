@@ -6,6 +6,7 @@ class Integrators {
   String cnpj;
   String icone;
   String phone;
+  String email;
 
   Integrators({
     required this.name,
@@ -15,6 +16,7 @@ class Integrators {
     required this.cnpj,
     required this.icone,
     required this.phone,
+    required this.email,
   });
 
   // Método fromJson
@@ -27,6 +29,7 @@ class Integrators {
       cnpj: json['cnpj'],
       icone: json['icon'],
       phone: json['phone'],
+      email: json['email'],
     );
   }
 
@@ -40,6 +43,7 @@ class Integrators {
       'cnpj': cnpj,
       'icon': icone,
       'phone': phone,
+      'email': phone,
     };
   }
 }

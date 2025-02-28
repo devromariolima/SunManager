@@ -10,8 +10,8 @@ class MoedaRepository {
       zipcode: '16721-625',
       cnpj: '79.740.522/0001-93',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'bitcoin',
-      // timestamp: DateTime.now(),
+      phone: '(11) 3456-7890',
+      email: 'contato@solarbrilhante.com.br',
       // mudancaHora: 0.5,
       // mudancaDia: 2.0,
       // mudancaSemana: 5.0,
@@ -26,8 +26,8 @@ class MoedaRepository {
       zipcode: '51060-281',
       cnpj: '94.512.358/0001-40',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'ethereum',
-      // timestamp: DateTime.now(),
+      phone: '(21) 2345-6789',
+      email: 'vendas@energialimpa.com.br',
       // mudancaHora: -0.2,
       // mudancaDia: 1.5,
       // mudancaSemana: 4.2,
@@ -42,8 +42,8 @@ class MoedaRepository {
       zipcode: '40805-144',
       cnpj: '47.108.417/0001-61',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'AVAX',
-      // timestamp: DateTime.now(),
+      phone: '(31) 8765-4321',
+      email: 'suporte@solarenergytech.com.br',
       // mudancaHora: 0.1,
       // mudancaDia: 0.9,
       // mudancaSemana: 3.1,
@@ -58,8 +58,8 @@ class MoedaRepository {
       zipcode: '83073-465',
       cnpj: '23.518.093/0001-71',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'BNB',
-      // timestamp: DateTime.now(),
+      phone: '(41) 1234-5678',
+      email: 'comercial@futurosolar.com.br',
       // mudancaHora: -0.3,
       // mudancaDia: 1.0,
       // mudancaSemana: 2.8,
@@ -74,8 +74,8 @@ class MoedaRepository {
       zipcode: '14957-660',
       cnpj: '60.903.619/0001-32',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Cardano',
-      // timestamp: DateTime.now(),
+      phone: '(51) 9876-5432',
+      email: 'atendimento@raiosdesol.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -90,9 +90,9 @@ class MoedaRepository {
       zipcode: '47801-322',
       cnpj: '09.471.322/0001-88',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Chainlink',
+      phone: '(12) 3456-7890',
 
-      // timestamp: DateTime.now(),
+      email: 'financeiro@energiasustentavel.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -107,8 +107,8 @@ class MoedaRepository {
       zipcode: '27734-361',
       cnpj: '30.173.681/0001-70',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Chainlink',
-      // timestamp: DateTime.now(),
+      phone: '(22) 4567-8901',
+      email: 'rh@solarnova.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -123,8 +123,8 @@ class MoedaRepository {
       zipcode: '69893-802',
       cnpj: '82.649.476/0001-20',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'WSTETH',
-      // timestamp: DateTime.now(),
+      phone: '(32) 7654-3210',
+      email: 'sac@luzsolar.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -139,8 +139,8 @@ class MoedaRepository {
       zipcode: '84608-4834',
       cnpj: '42.174.989/0001-37',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Chainlink',
-      // timestamp: DateTime.now(),
+      phone: '(42) 2345-6789',
+      email: 'projetos@cleansolar.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -155,8 +155,8 @@ class MoedaRepository {
       zipcode: '69864-353',
       cnpj: '55.913.370/0001-58',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'SHIB',
-      // timestamp: DateTime.now(),
+      phone: '(52) 8765-4321',
+      email: 'marketing@solpower.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -171,8 +171,8 @@ class MoedaRepository {
       cnpj: '36.627.101/0001-09',
       zipcode: '83780-141',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'SHIB',
-      // timestamp: DateTime.now(),
+      phone: '(13) 1234-5678',
+      email: 'diretor@energialimpatec.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -187,8 +187,8 @@ class MoedaRepository {
       zipcode: '63414-901',
       cnpj: '26.392.745/0001-54',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'SUI',
-      // timestamp: DateTime.now(),
+      phone: '23) 9876-5432',
+      email: 'orcamentos@soltech.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -203,8 +203,8 @@ class MoedaRepository {
       zipcode: '67005-231',
       cnpj: '98.142.367/0001-10',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Tether',
-      // timestamp: DateTime.now(),
+      phone: '(33) 3456-7890',
+      email: 'administracao@sunenergy.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -219,8 +219,8 @@ class MoedaRepository {
       zipcode: '58909-705',
       cnpj: '69.801.235/0001-29',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'Toncoin',
-      // timestamp: DateTime.now(),
+      phone: '(43) 4567-8901',
+      email: 'compras@solardynamics.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -235,8 +235,8 @@ class MoedaRepository {
       zipcode: '85981-860',
       cnpj: '04.125.769/0001-44',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'UNUS SED LEO',
-      // timestamp: DateTime.now(),
+      phone: '(53) 7654-3210',
+      email: 'gerencia@ecosolar.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -251,8 +251,8 @@ class MoedaRepository {
       zipcode: '66552-899',
       cnpj: '85.671.292/0001-31',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'USDS',
-      // timestamp: DateTime.now(),
+      phone: '(14) 2345-6789',
+      email: 'atendimento@energiasolarplus.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -267,8 +267,8 @@ class MoedaRepository {
       zipcode: '38437-955',
       cnpj: '77.301.812/0001-47',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'WETH',
-      // timestamp: DateTime.now(),
+      phone: '(24) 8765-4321',
+      email: 'comercial@solarmaster.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -283,8 +283,8 @@ class MoedaRepository {
       zipcode: '57395-192',
       cnpj: '12.438.576/0001-95',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'WBTC',
-      // timestamp: DateTime.now(),
+      phone: '(34) 1234-5678',
+      email: 'suporte@greenlightenergy.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -299,8 +299,8 @@ class MoedaRepository {
       zipcode: '86316-733',
       cnpj: '53.870.604/0001-6',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'WTRX',
-      // timestamp: DateTime.now(),
+      phone: '44) 9876-5432',
+      email: 'contato@energiasolarbrasil.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -315,8 +315,8 @@ class MoedaRepository {
       zipcode: '15205-195',
       cnpj: '66.015.398/0001-11',
       icone: 'https://i.imgur.com/Nkoh9Ck.png',
-      phone: 'WTRX',
-      // timestamp: DateTime.now(),
+      phone: '(54) 3456-7890',
+      email: 'vendas@sunriseenergia.com.br',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -338,7 +338,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 60 * 1000))
-                  .toString() // Timestamp de 1 hora atrás
+                  .toString() // email de 1 hora atrás
             ]
         ],
       },
@@ -348,7 +348,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 3600 * 1000))
-                  .toString() // Timestamp de 1 dia atrás
+                  .toString() // email de 1 dia atrás
             ]
         ],
       },
@@ -358,7 +358,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 24 * 3600 * 1000))
-                  .toString() // Timestamp de 1 semana atrás
+                  .toString() // email de 1 semana atrás
             ]
         ],
       },
@@ -368,7 +368,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 24 * 3600 * 1000))
-                  .toString() // Timestamp de 1 mês atrás
+                  .toString() // email de 1 mês atrás
             ]
         ],
       },
@@ -378,7 +378,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 30 * 24 * 3600 * 1000))
-                  .toString() // Timestamp de 1 ano atrás
+                  .toString() // email de 1 ano atrás
             ]
         ],
       },
@@ -388,7 +388,7 @@ class MoedaRepository {
             [
               (rng.nextDouble() * 100).toStringAsFixed(2), // Preço aleatório
               (currentTime - (i * 7 * 24 * 3600 * 1000))
-                  .toString() // Timestamp de 100 semanas atrás
+                  .toString() // email de 100 semanas atrás
             ]
         ],
       }
