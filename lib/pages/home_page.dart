@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         index: paginaAtual,
         items: const [
           Icon(Icons.list, size: 30, color: Colors.white),
-          Icon(Icons.list, size: 30, color: Colors.white),
+          Icon(Icons.production_quantity_limits, size: 30, color: Colors.white),
           Icon(Icons.star, size: 30, color: Colors.white),
           Icon(Icons.auto_graph, size: 30, color: Colors.white),
           Icon(Icons.settings, size: 30, color: Colors.white),
