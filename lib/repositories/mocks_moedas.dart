@@ -13,6 +13,8 @@ class MoedaRepository {
       phone: '(11) 3456-7890',
       email: 'contato@solarbrilhante.com.br',
       isActive: true,
+      observation:
+          'O sistema solar foi instalado com 98% de eficiência na captação de energia',
       // mudancaHora: 0.5,
       // mudancaDia: 2.0,
       // mudancaSemana: 5.0,
@@ -30,6 +32,8 @@ class MoedaRepository {
       phone: '(21) 2345-6789',
       email: 'vendas@energialimpa.com.br',
       isActive: true,
+      observation:
+          'Manutenção preventiva realizada nas conexões elétricas, tudo dentro dos parâmetros',
       // mudancaHora: -0.2,
       // mudancaDia: 1.5,
       // mudancaSemana: 4.2,
@@ -47,6 +51,8 @@ class MoedaRepository {
       phone: '(31) 8765-4321',
       email: 'suporte@solarenergytech.com.br',
       isActive: true,
+      observation:
+          'Painéis solares limpos em 12/02/2025, incremento de 5% na produção de energia',
       // mudancaHora: 0.1,
       // mudancaDia: 0.9,
       // mudancaSemana: 3.1,
@@ -64,6 +70,8 @@ class MoedaRepository {
       phone: '(41) 1234-5678',
       email: 'comercial@futurosolar.com.br',
       isActive: false,
+      observation:
+          'Conexão do inversor ao medidor de rede revisada, sem falhas detectadas',
       // mudancaHora: -0.3,
       // mudancaDia: 1.0,
       // mudancaSemana: 2.8,
@@ -81,6 +89,8 @@ class MoedaRepository {
       phone: '(51) 9876-5432',
       email: 'atendimento@raiosdesol.com.br',
       isActive: false,
+      observation:
+          'Recomendação de aumento da capacidade de armazenamento das baterias.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -98,6 +108,8 @@ class MoedaRepository {
       phone: '(12) 3456-7890',
       email: 'financeiro@energiasustentavel.com.br',
       isActive: true,
+      observation:
+          'Inversor apresentou sobrecarga em horários de pico, recomendação de upgrade.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -115,6 +127,8 @@ class MoedaRepository {
       phone: '(22) 4567-8901',
       email: 'rh@solarnova.com.br',
       isActive: true,
+      observation:
+          'Configuração do sistema otimizada para melhor aproveitamento das horas de sol',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -132,6 +146,8 @@ class MoedaRepository {
       phone: '(32) 7654-3210',
       email: 'sac@luzsolar.com.br',
       isActive: false,
+      observation:
+          'Monitoramento remoto do sistema ativado, relatórios semanais enviados ao cliente.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -149,6 +165,8 @@ class MoedaRepository {
       phone: '(42) 2345-6789',
       email: 'projetos@cleansolar.com.br',
       isActive: true,
+      observation:
+          'Falha intermitente na comunicação entre o inversor e o software de monitoramento',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -166,6 +184,8 @@ class MoedaRepository {
       phone: '(52) 8765-4321',
       email: 'marketing@solpower.com.br',
       isActive: false,
+      observation:
+          'Instalação de painéis solares adicionais recomendada para aumentar a capacidade.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -183,6 +203,8 @@ class MoedaRepository {
       phone: '(13) 1234-5678',
       email: 'diretor@energialimpatec.com.br',
       isActive: true,
+      observation:
+          'Teste de tensão realizado no sistema, dentro dos padrões de segurança',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -200,6 +222,8 @@ class MoedaRepository {
       phone: '23) 9876-5432',
       email: 'orcamentos@soltech.com.br',
       isActive: false,
+      observation:
+          'Painéis solares orientados corretamente, sem necessidade de ajustes.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -217,6 +241,8 @@ class MoedaRepository {
       phone: '(33) 3456-7890',
       email: 'administracao@sunenergy.com.br',
       isActive: true,
+      observation:
+          'Eficiência do sistema solar caiu 3% devido ao acúmulo de sujeira nos painéis',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -234,6 +260,8 @@ class MoedaRepository {
       phone: '(43) 4567-8901',
       email: 'compras@solardynamics.com.br',
       isActive: false,
+      observation:
+          'inversor solar foi atualizado para o firmware mais recente, melhora no desempenho.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -251,6 +279,8 @@ class MoedaRepository {
       phone: '(53) 7654-3210',
       email: 'gerencia@ecosolar.com.br',
       isActive: true,
+      observation:
+          'Sistema de backup ativado com sucesso, garantindo energia durante interrupções',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -268,6 +298,8 @@ class MoedaRepository {
       phone: '(14) 2345-6789',
       email: 'atendimento@energiasolarplus.com.br',
       isActive: false,
+      observation:
+          'Baterias de lítio substituídas por novas com maior capacidade de armazenamento.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -285,6 +317,8 @@ class MoedaRepository {
       phone: '(24) 8765-4321',
       email: 'comercial@solarmaster.com.br',
       isActive: true,
+      observation:
+          'Inversor está operando próximo ao limite de sua capacidade, monitoramento recomendado',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -302,6 +336,8 @@ class MoedaRepository {
       phone: '(34) 1234-5678',
       email: 'suporte@greenlightenergy.com.br',
       isActive: false,
+      observation:
+          'Redução de 10% na produção de energia durante o inverno, esperado para a região.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -319,6 +355,8 @@ class MoedaRepository {
       phone: '44) 9876-5432',
       email: 'contato@energiasolarbrasil.com.br',
       isActive: true,
+      observation:
+          'Sistema integrado à rede elétrica com sucesso, venda de excedente de energia ativa.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,
@@ -336,6 +374,8 @@ class MoedaRepository {
       phone: '(54) 3456-7890',
       email: 'vendas@sunriseenergia.com.br',
       isActive: false,
+      observation:
+          'Relatório de desempenho enviado ao cliente, mostrando 20% de economia mensal na conta.',
       // mudancaHora: 0.2,
       // mudancaDia: 1.2,
       // mudancaSemana: 3.5,

@@ -24,6 +24,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final TextEditingController _address = TextEditingController();
   final TextEditingController _phone = TextEditingController();
   final TextEditingController _email = TextEditingController();
+  final TextEditingController _observation = TextEditingController();
   bool _isActive = false; // Estado do checkbox
 
   double quantidade = 0;
@@ -41,6 +42,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     _phone.text = widget.moeda.phone;
     _email.text = widget.moeda.email;
     _isActive = widget.moeda.isActive;
+    _observation.text = widget.moeda.observation;
   }
 
   // Widget getGrafico() {
@@ -190,36 +192,60 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
             ),
             keyboardType: TextInputType.emailAddress,
           ),
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Checkbox(
-                value: _isActive,
-                onChanged: (bool? value) {
-                  setState(() {
-                    _isActive = value ?? false;
-                  });
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                activeColor: Colors.blue,
-                checkColor: Colors.white,
-                side: BorderSide(
-                  color: Colors.grey.shade400,
-                  width: 2,
-                ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: _isActive,
+                    onChanged: (bool? value) {
+                      setState(() {
+                        _isActive = value ?? false;
+                      });
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    activeColor: Colors.blue,
+                    checkColor: Colors.white,
+                    side: BorderSide(
+                      color: Colors.grey.shade400,
+                      width: 2,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Cadastro Ativo',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(width: 10),
+              const SizedBox(height: 20),
               const Text(
-                'Cadastro Ativo',
+                'Observações:',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: Colors.black87,
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _observation,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  hintText: 'Digite suas observações aqui...',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               ),
             ],
-          ),
+          )
         ],
       ),
     );
