@@ -51,7 +51,15 @@ class _MoedasPageState extends State<MoedasPage> {
   appApbarDinamica() {
     if (selecionadas.isEmpty) {
       return AppBar(
-        title: const Text('Integradores'),
+        title: const Text(
+          'Integradores',
+          style: TextStyle(
+            fontSize: 20,
+            fontStyle: FontStyle.italic,
+            color: Colors.black,
+            fontFamily: 'Roboto',
+          ),
+        ),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
