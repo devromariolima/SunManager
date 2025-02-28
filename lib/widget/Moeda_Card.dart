@@ -1,5 +1,5 @@
 import 'package:cripto/models/Integrators_model.dart';
-import 'package:cripto/pages/Integrators_detalhes_page.dart';
+import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:flutter/material.dart';
 // import 'package:intl/intl.dart';
