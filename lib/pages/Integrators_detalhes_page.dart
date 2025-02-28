@@ -23,6 +23,9 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final TextEditingController _city = TextEditingController();
   final TextEditingController _address = TextEditingController();
   final TextEditingController _phone = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  bool _isActive = false; // Estado do checkbox
+
   double quantidade = 0;
   late ContaRepository conta;
   Widget grafico = Container();
@@ -36,6 +39,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     _city.text = widget.moeda.city;
     _address.text = widget.moeda.address;
     _phone.text = widget.moeda.phone;
+    _email.text = widget.moeda.email;
+    _isActive = widget.moeda.isActive;
   }
 
   // Widget getGrafico() {
@@ -176,6 +181,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
           ),
           const SizedBox(height: 10),
           TextFormField(
+            controller: _email,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -183,6 +189,22 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
               prefixIcon: Icon(Icons.email),
             ),
             keyboardType: TextInputType.emailAddress,
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: _isActive, // Valor booleano do estado
+                onChanged: (bool? value) {
+                  setState(() {
+                    // _cadastroAtivo = value ?? false; // Atualiza o estado
+                  });
+                },
+              ),
+              const Text(
+                'Cadastro Ativo',
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
         ],
       ),

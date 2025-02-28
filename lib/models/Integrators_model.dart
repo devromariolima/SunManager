@@ -7,6 +7,7 @@ class Integrators {
   String icone;
   String phone;
   String email;
+  bool isActive = false;
 
   Integrators({
     required this.name,
@@ -17,6 +18,7 @@ class Integrators {
     required this.icone,
     required this.phone,
     required this.email,
+    required this.isActive,
   });
 
   // Método fromJson
@@ -30,6 +32,7 @@ class Integrators {
       icone: json['icon'],
       phone: json['phone'],
       email: json['email'],
+      isActive: json['isActive'],
     );
   }
 
@@ -44,6 +47,7 @@ class Integrators {
       'icon': icone,
       'phone': phone,
       'email': phone,
+      'isActive': isActive,
     };
   }
 }
