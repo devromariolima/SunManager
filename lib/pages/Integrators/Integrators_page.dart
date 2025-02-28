@@ -54,7 +54,20 @@ class _MoedasPageState extends State<MoedasPage> {
         title: const Text('Integradores'),
         // actions: [chageLanguageButton()],
         centerTitle: true, // Centraliza o título
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.notifications),
+            onPressed: () {},
+          ),
+        ],
         backgroundColor: Colors.blue, // Define a cor azul para a AppBar
+        leading: IconButton(
+            onPressed: () {},
+            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.menu))),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(25),
+                bottomRight: Radius.circular(25))),
       );
     } else {
       return AppBar(
