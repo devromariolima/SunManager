@@ -18,7 +18,7 @@ class ProductRepository {
           'StringBox com proteção contra surtos e seccionamento até 1000V.',
       quantity: 50,
       sku: 'SB1000V',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Gerador Fotovoltaico 10kW',
@@ -27,7 +27,7 @@ class ProductRepository {
           'Gerador fotovoltaico com capacidade de 10kW e estrutura de suporte inclusa.',
       quantity: 5,
       sku: 'GFV10KW',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Painel Solar 450W',
@@ -36,7 +36,7 @@ class ProductRepository {
           'Painel solar de 450W com alta eficiência e resistência ao clima.',
       quantity: 200,
       sku: 'PS450W',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Controlador de Carga MPPT 60A',
@@ -45,7 +45,7 @@ class ProductRepository {
           'Controlador de carga MPPT com corrente de 60A para otimização de energia.',
       quantity: 40,
       sku: 'CCMPPT60A',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Bateria Solar 12V 200Ah',
@@ -54,7 +54,7 @@ class ProductRepository {
           'Bateria solar de lítio 12V 200Ah para armazenamento de energia.',
       quantity: 30,
       sku: 'BS12V200AH',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Estrutura de Suporte para Painéis',
@@ -62,7 +62,7 @@ class ProductRepository {
       description: 'Estrutura de suporte ajustável para painéis solares.',
       quantity: 100,
       sku: 'ESPSOLAR',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Cabos Fotovoltaicos 6mm²',
@@ -71,7 +71,7 @@ class ProductRepository {
           'Cabos solares de 6mm² para instalação fotovoltaica, vendida por metro.',
       quantity: 1000,
       sku: 'CABO6MM',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Kit de Ferramentas para Instalação Solar',
@@ -80,7 +80,7 @@ class ProductRepository {
           'Kit completo de ferramentas para instalação de sistemas solares.',
       quantity: 20,
       sku: 'KITFERRSOLAR',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
     Products(
       name: 'Medidor de Energia Bidirecional',
@@ -89,7 +89,7 @@ class ProductRepository {
           'Medidor de energia bidirecional para monitoramento de consumo e geração.',
       quantity: 15,
       sku: 'MEDENERBID',
-      icone: '', // Adicione aqui a icone depois
+      icone: 'https://i.imgur.com/Nkoh9Ck.png', // Adicione aqui a icone depois
     ),
   ];
 }

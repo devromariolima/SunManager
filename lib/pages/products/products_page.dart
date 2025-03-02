@@ -20,6 +20,8 @@ class _ProductsPageState extends State<ProductsPage> {
   late NumberFormat real;
   late Map<String, String> loc;
   late ProductRepository productList;
+  TextEditingController searchController = TextEditingController();
+  List<Products> filteredProducts = [];
 
   readNumberFormat() {
     loc = context.watch<AppSettings>().locale;
@@ -43,6 +45,17 @@ class _ProductsPageState extends State<ProductsPage> {
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(25),
               bottomRight: Radius.circular(25))),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () async {
+            await showSearch(
+              context: context,
+              delegate: ProductSearchDelegate(products: tabela),
+            );
+          },
+        ),
+      ],
     );
   }
 
@@ -72,6 +85,7 @@ class _ProductsPageState extends State<ProductsPage> {
   Widget build(BuildContext context) {
     productList = Provider.of<ProductRepository>(context);
     tabela = ProductRepository.productList;
+    filteredProducts = tabela;
     readNumberFormat();
     return Scaffold(
       appBar: appApbarDinamica(),
@@ -83,12 +97,12 @@ class _ProductsPageState extends State<ProductsPage> {
             ),
             leading: SizedBox(
               width: 40,
-              child: Image.network(tabela[produto].icone),
+              child: Image.network(filteredProducts[produto].icone),
             ),
             title: Row(
               children: [
                 Text(
-                  tabela[produto].name,
+                  filteredProducts[produto].name,
                   style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
@@ -96,13 +110,95 @@ class _ProductsPageState extends State<ProductsPage> {
                 ),
               ],
             ),
-            onTap: () => mostrarDetalhes(tabela[produto]),
+            onTap: () => mostrarDetalhes(filteredProducts[produto]),
           );
         },
         padding: const EdgeInsets.all(16),
         separatorBuilder: (_, __) => const Divider(),
-        itemCount: tabela.length,
+        itemCount: filteredProducts.length,
       ),
+    );
+  }
+}
+
+class ProductSearchDelegate extends SearchDelegate {
+  final List<Products> products;
+
+  ProductSearchDelegate({required this.products});
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final List<Products> result = products
+        .where((product) =>
+            product.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return ListView.separated(
+      itemCount: result.length,
+      itemBuilder: (BuildContext context, int index) {
+        final product = result[index];
+        return ListTile(
+          leading: Image.network(product.icone),
+          title: Text(product.name),
+          onTap: () {
+            close(context, null);
+            // Open product details page
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ProdutoDetalhesPage(produto: product),
+              ),
+            );
+          },
+        );
+      },
+      separatorBuilder: (_, __) => const Divider(),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final List<Products> suggestionList = products
+        .where((product) =>
+            product.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return ListView.separated(
+      itemCount: suggestionList.length,
+      itemBuilder: (BuildContext context, int index) {
+        final product = suggestionList[index];
+        return ListTile(
+          leading: Image.network(product.icone),
+          title: Text(product.name),
+          onTap: () {
+            query = product.name;
+            showResults(context);
+          },
+        );
+      },
+      separatorBuilder: (_, __) => const Divider(),
     );
   }
 }
