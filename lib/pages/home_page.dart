@@ -1,5 +1,5 @@
 import 'package:cripto/pages/Configuracoes_page.dart';
-import 'package:cripto/pages/carteira_page.dart';
+// import 'package:cripto/pages/carteira_page.dart';
 import 'package:cripto/pages/favoritas_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
 import 'package:cripto/pages/products/products_page.dart';

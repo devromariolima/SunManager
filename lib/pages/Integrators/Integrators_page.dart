@@ -1,7 +1,6 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
-import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -26,27 +25,6 @@ class _MoedasPageState extends State<MoedasPage> {
     loc = context.watch<AppSettings>().locale;
     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
   }
-
-  // chageLanguageButton() {
-  //   final locale = loc['locale'] == 'pt_BR' ? 'en_US' : 'pt_BR';
-  //   final name = loc['locale'] == 'pt_BR' ? '\$' : 'R\$';
-
-  //   return PopupMenuButton(
-  //     icon: const Icon(Icons.language),
-  //     itemBuilder: (context) => [
-  //       PopupMenuItem(
-  //         child: ListTile(
-  //           leading: const Icon(Icons.swap_vert),
-  //           title: Text('Usar $locale'),
-  //           onTap: () {
-  //             context.read<AppSettings>().setLocale(locale, name);
-  //             Navigator.pop(context);
-  //           },
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
 
   appApbarDinamica() {
     if (selecionadas.isEmpty) {

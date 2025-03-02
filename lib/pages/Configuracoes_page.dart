@@ -1,13 +1,13 @@
 import 'dart:io';
 // import 'package:camera/camera.dart';
-import 'package:cripto/configs/app_setings.dart';
+// import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/pages/documentos_page.dart';
-import 'package:cripto/repositories/conta_repository.dart';
+// import 'package:cripto/repositories/conta_repository.dart';
 import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class ConfiguracoesPage extends StatefulWidget {
@@ -23,9 +23,9 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
   @override
   Widget build(BuildContext context) {
     // final conta = context.watch<ContaRepository>();
-    final loc = context.read<AppSettings>().locale;
-    NumberFormat real =
-        NumberFormat.currency(locale: loc['locale'], name: loc['name']);
+    // final loc = context.read<AppSettings>().locale;
+    // NumberFormat real =
+    //     NumberFormat.currency(locale: loc['locale'], name: loc['name']);
 
     return Scaffold(
       appBar: AppBar(

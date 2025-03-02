@@ -1,9 +1,5 @@
 import 'package:cripto/models/Integrators_model.dart';
-import 'package:cripto/repositories/conta_repository.dart';
-// import 'package:cripto/widget/grafico_historico.dart';
 import 'package:flutter/material.dart';
-// import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
 class MoedasDetalhesPage extends StatefulWidget {
   final Integrators moeda;
@@ -15,9 +11,7 @@ class MoedasDetalhesPage extends StatefulWidget {
 }
 
 class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
-  // final NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _valor = TextEditingController();
   final TextEditingController _nomeEmpresa = TextEditingController();
   final TextEditingController _taxId = TextEditingController();
   final TextEditingController _city = TextEditingController();
@@ -25,10 +19,9 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   final TextEditingController _phone = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _observation = TextEditingController();
-  bool _isActive = false; // Estado do checkbox
+  bool _isActive = false;
 
   double quantidade = 0;
-  // late ContaRepository conta;
   Widget grafico = Container();
   bool graficoLoaded = false;
 
@@ -36,7 +29,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   void initState() {
     super.initState();
     _nomeEmpresa.text = widget.moeda.name;
-    _taxId.text = widget.moeda.cnpj; // Preenchendo o campo com o nome da moeda
+    _taxId.text = widget.moeda.cnpj;
     _city.text = widget.moeda.city;
     _address.text = widget.moeda.address;
     _phone.text = widget.moeda.phone;
@@ -45,28 +38,8 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     _observation.text = widget.moeda.observation;
   }
 
-  // Widget getGrafico() {
-  //   if (!graficoLoaded) {
-  //     grafico = GraficoHistorico(moeda: widget.moeda);
-  //     graficoLoaded = true;
-  //   }
-  //   return grafico;
-  // }
-
-  // void comprar() {
-  //   if (_formKey.currentState!.validate()) {
-  //     conta.comprar(widget.moeda, double.parse(_valor.text));
-  //     Navigator.pop(context);
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       const SnackBar(content: Text('Compra realizada com sucesso')),
-  //     );
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
-    // conta = Provider.of<ContaRepository>(context, listen: false);
-
     return Scaffold(
       appBar: AppBar(title: Text(widget.moeda.name)),
       body: Padding(
@@ -83,29 +56,6 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
       ),
     );
   }
-
-  // Widget _buildHeader() {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(bottom: 24),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       crossAxisAlignment: CrossAxisAlignment.center,
-  //       children: [
-  //         Image.network(widget.moeda.icone, scale: 2.5),
-  //         const SizedBox(width: 10),
-  //         Text(
-  //           real.format(widget.moeda.preco),
-  //           style: TextStyle(
-  //             fontSize: 26,
-  //             fontWeight: FontWeight.w600,
-  //             letterSpacing: -1,
-  //             color: Colors.grey[800],
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   Widget _buildQuantidadeInfo() {
     return (quantidade > 0)

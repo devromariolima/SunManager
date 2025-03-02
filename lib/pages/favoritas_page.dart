@@ -1,7 +1,7 @@
-import 'package:cripto/repositories/favoritas_repository.dart';
-import 'package:cripto/widget/Moeda_Card.dart';
+// import 'package:cripto/repositories/favoritas_repository.dart';
+// import 'package:cripto/widget/Moeda_Card.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class FavoritasPage extends StatefulWidget {
   const FavoritasPage({super.key});
