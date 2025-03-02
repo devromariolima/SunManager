@@ -84,6 +84,14 @@ class Navbar extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
+                            'Diretor',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
                             'Devromariolima@gmail.com',
                             style: TextStyle(
                               color: Colors.white70,
