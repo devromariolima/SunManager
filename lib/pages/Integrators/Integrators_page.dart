@@ -19,7 +19,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
   late List<Integrators> filteredTabela;
   late NumberFormat real;
   late Map<String, String> loc;
-  late IntegratorsRepository moedas;
+  late IntegratorsRepository integrators;
   TextEditingController searchController = TextEditingController();
 
   readNumberFormat() {
@@ -103,7 +103,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
 
   @override
   Widget build(BuildContext context) {
-    moedas = Provider.of<IntegratorsRepository>(context);
+    integrators = Provider.of<IntegratorsRepository>(context);
     tabela = IntegratorsRepository.tabela;
 
     filteredTabela = tabela;

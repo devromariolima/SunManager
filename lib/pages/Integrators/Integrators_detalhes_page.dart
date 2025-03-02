@@ -40,7 +40,6 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
 
   void salvar() {
     if (_formKey.currentState!.validate()) {
-      // Ação de salvar produto, pode ser para atualizar o banco ou algo relacionado
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Cadastro Salvo')),
