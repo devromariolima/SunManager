@@ -264,4 +264,10 @@ class MoedaRepository {
           'Relatório de desempenho enviado ao cliente, mostrando 20% de economia mensal na conta.',
     ),
   ];
+
+  List<Integrators> buscarIntegradoresPorNome(String nome) {
+    return tabela.where((integrator) {
+      return integrator.name.toLowerCase().contains(nome.toLowerCase());
+    }).toList();
+  }
 }

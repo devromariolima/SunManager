@@ -93,24 +93,21 @@ class _MoedasPageState extends State<MoedasPage> {
     });
   }
 
-  // Função para filtrar os dados com base na pesquisa
-  void filterData(String query) {
-    final filtered = tabela
-        .where((moeda) =>
-            moeda.name.toLowerCase().contains(query.toLowerCase()) ||
-            moeda.cnpj.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-
+  void _filterTabela(String query) {
     setState(() {
-      filteredTabela = filtered;
+      filteredTabela = tabela.where((integrator) {
+        return integrator.name.toLowerCase().contains(query.toLowerCase());
+      }).toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    moedas = Provider.of<MoedaRepository>(context); //verificar depois
+    moedas = Provider.of<MoedaRepository>(context);
     tabela = MoedaRepository.tabela;
-    filteredTabela = tabela; // Inicializa com todos os dados
+
+    filteredTabela = tabela;
+
     readNumberFormat();
 
     return Scaffold(
@@ -121,7 +118,9 @@ class _MoedasPageState extends State<MoedasPage> {
             padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: searchController,
-              onChanged: (query) => filterData(query),
+              onChanged: (query) {
+                _filterTabela(query);
+              },
               decoration: InputDecoration(
                 labelText: 'Buscar Integrador',
                 prefixIcon: const Icon(Icons.search),
@@ -132,35 +131,37 @@ class _MoedasPageState extends State<MoedasPage> {
             ),
           ),
           Expanded(
-            child: ListView.separated(
-              itemBuilder: (BuildContext context, int moeda) {
-                return ListTile(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
-                  ),
-                  leading: SizedBox(
-                    width: 40,
-                    child: Image.network(filteredTabela[moeda].icone),
-                  ),
-                  title: Row(
-                    children: [
-                      Text(
-                        filteredTabela[moeda].name,
-                        style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
+            child: filteredTabela.isEmpty
+                ? const Center(child: Text('Nenhum integrador encontrado.'))
+                : ListView.separated(
+                    itemBuilder: (BuildContext context, int moeda) {
+                      return ListTile(
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
                         ),
-                      ),
-                    ],
+                        leading: SizedBox(
+                          width: 40,
+                          child: Image.network(filteredTabela[moeda].icone),
+                        ),
+                        title: Row(
+                          children: [
+                            Text(
+                              filteredTabela[moeda].name,
+                              style: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                        trailing: Text((filteredTabela[moeda].cnpj)),
+                        onTap: () => mostrarDetalhes(filteredTabela[moeda]),
+                      );
+                    },
+                    padding: const EdgeInsets.all(16),
+                    separatorBuilder: (_, __) => const Divider(),
+                    itemCount: filteredTabela.length,
                   ),
-                  trailing: Text((filteredTabela[moeda].cnpj)),
-                  onTap: () => mostrarDetalhes(filteredTabela[moeda]),
-                );
-              },
-              padding: const EdgeInsets.all(16),
-              separatorBuilder: (_, __) => const Divider(),
-              itemCount: filteredTabela.length,
-            ),
           ),
         ],
       ),
