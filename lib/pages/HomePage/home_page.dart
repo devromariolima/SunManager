@@ -1,5 +1,4 @@
 import 'package:cripto/pages/Configuracoes_page.dart';
-// import 'package:cripto/pages/carteira_page.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
 import 'package:cripto/pages/products/products_page.dart';
@@ -47,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.grey[100]!,
         color: Colors.blueAccent,
         height: 60,
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: const Duration(milliseconds: 300),
         index: paginaAtual,
         items: const [
           Icon(Icons.list, size: 30, color: Colors.white),
@@ -59,7 +58,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (pagina) {
           pc.animateToPage(
             pagina,
-            duration: Duration(milliseconds: 400),
+            duration: const Duration(milliseconds: 400),
             curve: Curves.ease,
           );
           setPaginAtual(pagina);
