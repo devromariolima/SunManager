@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           MoedasPage(),
           ProductsPage(),
           FavoritasPage(),
-          CarteiraPage(),
+          // CarteiraPage(),
           ConfiguracoesPage(),
         ],
         onPageChanged: setPaginAtual,

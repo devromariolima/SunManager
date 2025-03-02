@@ -101,16 +101,16 @@ class _MoedaCardState extends State<MoedaCard> {
               PopupMenuButton(
                 icon: const Icon(Icons.more_vert),
                 itemBuilder: (context) => [
-                  PopupMenuItem(
-                    child: ListTile(
-                      title: const Text('Remover das favoritas'),
-                      onTap: () {
-                        Navigator.pop(context);
-                        Provider.of<FavoritasRepository>(context, listen: false)
-                            .remove(widget.moeda);
-                      },
-                    ),
-                  ),
+                  // PopupMenuItem(
+                  //   child: ListTile(
+                  //     title: const Text('Remover das favoritas'),
+                  //     onTap: () {
+                  //       Navigator.pop(context);
+                  //       Provider.of<FavoritasRepository>(context, listen: false)
+                  //           .remove(widget.moeda);
+                  //     },
+                  //   ),
+                  // ),
                 ],
               ),
             ],

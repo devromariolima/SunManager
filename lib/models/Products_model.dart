@@ -1,17 +1,18 @@
 class Products {
   String name;
-  double price;
+  String price;
   String description;
   int quantity;
   String sku;
+  String icone;
 
-  Products({
-    required this.name,
-    required this.price,
-    required this.description,
-    required this.quantity,
-    required this.sku,
-  });
+  Products(
+      {required this.name,
+      required this.price,
+      required this.description,
+      required this.quantity,
+      required this.sku,
+      required this.icone});
 
   // Método fromJson
   factory Products.fromJson(Map<String, dynamic> json) {
@@ -21,6 +22,7 @@ class Products {
       description: json['description'],
       quantity: json['quantity'],
       sku: json['sku'],
+      icone: json['icone'],
     );
   }
 
@@ -32,6 +34,7 @@ class Products {
       'description': description,
       'quantity': quantity,
       'sku': sku,
+      'icone': icone,
     };
   }
 }

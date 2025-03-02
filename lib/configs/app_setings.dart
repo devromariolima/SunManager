@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AppSettings extends ChangeNotifier{
+class AppSettings extends ChangeNotifier {
   late SharedPreferences _prefs;
-  Map<String, String> locale = {
-    'locate': 'pt_BR',
-    'name': 'R\$'
-  };
+  Map<String, String> locale = {'locate': 'pt_BR', 'name': 'R\$'};
 
-  AppSettings(){
-  _startSettings();
-
+  AppSettings() {
+    _startSettings();
   }
 
   _startSettings() async {
@@ -18,26 +14,24 @@ class AppSettings extends ChangeNotifier{
     await _readLocale();
   }
 
-Future<void> _startPreferences() async {
-  _prefs = await SharedPreferences.getInstance();
+  Future<void> _startPreferences() async {
+    _prefs = await SharedPreferences.getInstance();
+  }
 
-}
-_readLocale(){
-  final local  = _prefs.getString('local') ?? 'pt_br';
-   final name  = _prefs.getString('name') ?? 'R\$';
-   locale = {
-    'locale': local,
-    'name': name,
-   };
+  _readLocale() {
+    final local = _prefs.getString('local') ?? 'pt_br';
+    final name = _prefs.getString('name') ?? 'R\$';
+    locale = {
+      'locale': local,
+      'name': name,
+    };
 
-   notifyListeners();
+    notifyListeners();
+  }
 
-}
-setLocale(String local, String name) async {
-
-  await _prefs.setString('local', local);
-   await _prefs.setString('name', name);
-   await _readLocale();
-}
-
+  setLocale(String local, String name) async {
+    await _prefs.setString('local', local);
+    await _prefs.setString('name', name);
+    await _readLocale();
+  }
 }

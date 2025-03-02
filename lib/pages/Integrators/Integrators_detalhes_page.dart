@@ -28,7 +28,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   bool _isActive = false; // Estado do checkbox
 
   double quantidade = 0;
-  late ContaRepository conta;
+  // late ContaRepository conta;
   Widget grafico = Container();
   bool graficoLoaded = false;
 
@@ -53,19 +53,19 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   //   return grafico;
   // }
 
-  void comprar() {
-    if (_formKey.currentState!.validate()) {
-      conta.comprar(widget.moeda, double.parse(_valor.text));
-      Navigator.pop(context);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Compra realizada com sucesso')),
-      );
-    }
-  }
+  // void comprar() {
+  //   if (_formKey.currentState!.validate()) {
+  //     conta.comprar(widget.moeda, double.parse(_valor.text));
+  //     Navigator.pop(context);
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text('Compra realizada com sucesso')),
+  //     );
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
-    conta = Provider.of<ContaRepository>(context, listen: false);
+    // conta = Provider.of<ContaRepository>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(title: Text(widget.moeda.name)),
@@ -255,26 +255,26 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     return Container(
       alignment: Alignment.bottomCenter,
       margin: const EdgeInsets.only(top: 24),
-      child: ElevatedButton(
-        onPressed: comprar,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
-        ),
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.check),
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                'Salvar',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-          ],
-        ),
-      ),
+      // child: ElevatedButton(
+      //   onPressed: comprar,
+      //   style: ElevatedButton.styleFrom(
+      //     backgroundColor: Colors.blue,
+      //     foregroundColor: Colors.white,
+      //   ),
+      //   child: const Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Icon(Icons.check),
+      //       Padding(
+      //         padding: EdgeInsets.all(16),
+      //         child: Text(
+      //           'Salvar',
+      //           style: TextStyle(fontSize: 20),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }

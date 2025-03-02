@@ -1,7 +1,6 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
-import 'package:cripto/pages/sidebar/Navbar.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,7 @@ class _MoedasPageState extends State<MoedasPage> {
   late NumberFormat real;
   late Map<String, String> loc;
   List<Integrators> selecionadas = [];
-  late FavoritasRepository favoritas;
+  // late FavoritasRepository favoritas;
   late MoedaRepository moedas;
 
   readNumberFormat() {
@@ -71,14 +70,7 @@ class _MoedasPageState extends State<MoedasPage> {
         backgroundColor: Colors.blue,
         leading: IconButton(
             onPressed: () {},
-            icon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Navbar()),
-                  );
-                },
-                icon: const Icon(Icons.menu))),
+            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.menu))),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(25),
@@ -132,7 +124,7 @@ class _MoedasPageState extends State<MoedasPage> {
 
   @override
   Widget build(BuildContext context) {
-    favoritas = Provider.of<FavoritasRepository>(context);
+    // favoritas = Provider.of<FavoritasRepository>(context);
     moedas = Provider.of<MoedaRepository>(context); //verificar depois
     tabela = MoedaRepository.tabela;
     readNumberFormat();
@@ -161,8 +153,8 @@ class _MoedasPageState extends State<MoedasPage> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                if (favoritas.lista.contains(tabela[moeda]))
-                  const Icon(Icons.circle, color: Colors.amber, size: 8),
+                // if (favoritas.lista.contains(tabela[moeda]))
+                //   const Icon(Icons.circle, color: Colors.amber, size: 8),
               ],
             ),
             trailing: Text((tabela[moeda].cnpj)),
@@ -182,21 +174,21 @@ class _MoedasPageState extends State<MoedasPage> {
         separatorBuilder: (_, __) => const Divider(),
         itemCount: tabela.length,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: selecionadas.isNotEmpty
-          ? FloatingActionButton.extended(
-              onPressed: () {
-                favoritas.saveAll(selecionadas);
-                limparSelecionadas();
-              },
-              icon: const Icon(Icons.star),
-              label: const Text('Favoritar',
-                  style: TextStyle(
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.bold,
-                  )),
-            )
-          : null,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: selecionadas.isNotEmpty
+      //     ? FloatingActionButton.extended(
+      //         onPressed: () {
+      //           favoritas.saveAll(selecionadas);
+      //           limparSelecionadas();
+      //         },
+      //         icon: const Icon(Icons.star),
+      //         label: const Text('Favoritar',
+      //             style: TextStyle(
+      //               letterSpacing: 0,
+      //               fontWeight: FontWeight.bold,
+      //             )),
+      //       )
+      //     : null,
     );
   }
 }

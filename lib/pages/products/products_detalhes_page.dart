@@ -1,128 +1,62 @@
-import 'package:cripto/models/Integrators_model.dart';
-import 'package:cripto/repositories/conta_repository.dart';
-// import 'package:cripto/widget/grafico_historico.dart';
+import 'package:cripto/models/Products_model.dart';
 import 'package:flutter/material.dart';
-// import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
-class MoedasDetalhesPage extends StatefulWidget {
-  final Integrators moeda;
+class ProdutoDetalhesPage extends StatefulWidget {
+  final Products produto;
 
-  const MoedasDetalhesPage({super.key, required this.moeda});
+  const ProdutoDetalhesPage({super.key, required this.produto});
 
   @override
-  State<MoedasDetalhesPage> createState() => _MoedasDetalhesPageState();
+  State<ProdutoDetalhesPage> createState() => _ProdutoDetalhesPageState();
 }
 
-class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
-  // final NumberFormat real = NumberFormat.currency(locale: 'pt_BR', name: 'R\$');
+class _ProdutoDetalhesPageState extends State<ProdutoDetalhesPage> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _valor = TextEditingController();
-  final TextEditingController _nomeEmpresa = TextEditingController();
-  final TextEditingController _taxId = TextEditingController();
-  final TextEditingController _city = TextEditingController();
-  final TextEditingController _address = TextEditingController();
-  final TextEditingController _phone = TextEditingController();
-  final TextEditingController _email = TextEditingController();
-  final TextEditingController _observation = TextEditingController();
+  final TextEditingController _nomeProduto = TextEditingController();
+  final TextEditingController _sku = TextEditingController();
+  final TextEditingController _preco = TextEditingController();
+  final TextEditingController _descricao = TextEditingController();
+  final TextEditingController _quantidade = TextEditingController();
+  final TextEditingController _categoria = TextEditingController();
   bool _isActive = false; // Estado do checkbox
-
-  double quantidade = 0;
-  late ContaRepository conta;
-  Widget grafico = Container();
-  bool graficoLoaded = false;
 
   @override
   void initState() {
     super.initState();
-    _nomeEmpresa.text = widget.moeda.name;
-    _taxId.text = widget.moeda.cnpj; // Preenchendo o campo com o nome da moeda
-    _city.text = widget.moeda.city;
-    _address.text = widget.moeda.address;
-    _phone.text = widget.moeda.phone;
-    _email.text = widget.moeda.email;
-    _isActive = widget.moeda.isActive;
-    _observation.text = widget.moeda.observation;
+    _nomeProduto.text = widget.produto.name;
+    _sku.text = widget.produto.sku;
+    _preco.text = widget.produto.price.toString();
+    _descricao.text = widget.produto.description;
+    _quantidade.text = widget.produto.quantity.toString();
+    _isActive = true; // Supondo que o produto está ativo
+    _categoria.text = 'Energia Solar'; // Categoria fixa para energia solar
   }
 
-  // Widget getGrafico() {
-  //   if (!graficoLoaded) {
-  //     grafico = GraficoHistorico(moeda: widget.moeda);
-  //     graficoLoaded = true;
-  //   }
-  //   return grafico;
-  // }
-
-  void comprar() {
+  void salvar() {
     if (_formKey.currentState!.validate()) {
-      conta.comprar(widget.moeda, double.parse(_valor.text));
+      // Ação de salvar produto, pode ser para atualizar o banco ou algo relacionado
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Compra realizada com sucesso')),
+        const SnackBar(content: Text('Produto salvo com sucesso')),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    conta = Provider.of<ContaRepository>(context, listen: false);
-
     return Scaffold(
-      appBar: AppBar(title: Text(widget.moeda.name)),
+      appBar: AppBar(title: Text(widget.produto.name)),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
-            // _buildHeader(),
-            // getGrafico(),
-            _buildQuantidadeInfo(),
             _buildForm(),
-            _buildComprarButton(),
+            _buildSalvarButton(),
           ],
         ),
       ),
     );
-  }
-
-  // Widget _buildHeader() {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(bottom: 24),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       crossAxisAlignment: CrossAxisAlignment.center,
-  //       children: [
-  //         Image.network(widget.moeda.icone, scale: 2.5),
-  //         const SizedBox(width: 10),
-  //         Text(
-  //           real.format(widget.moeda.preco),
-  //           style: TextStyle(
-  //             fontSize: 26,
-  //             fontWeight: FontWeight.w600,
-  //             letterSpacing: -1,
-  //             color: Colors.grey[800],
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  Widget _buildQuantidadeInfo() {
-    return (quantidade > 0)
-        ? Container(
-            width: double.infinity,
-            margin: const EdgeInsets.only(bottom: 24),
-            padding: const EdgeInsets.all(12),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.teal.withOpacity(0.05),
-            ),
-            child: Text(
-              '$quantidade ${widget.moeda.address}',
-              style: const TextStyle(fontSize: 20, color: Colors.teal),
-            ),
-          )
-        : const SizedBox(height: 24);
   }
 
   Widget _buildForm() {
@@ -131,66 +65,66 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
       child: Column(
         children: [
           TextFormField(
-            controller: _nomeEmpresa,
+            controller: _nomeProduto,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Nome da Empresa',
-              prefixIcon: Icon(Icons.business),
+              labelText: 'Nome do Produto',
+              prefixIcon: Icon(Icons.device_hub),
             ),
           ),
           const SizedBox(height: 10),
           TextFormField(
-            controller: _taxId,
+            controller: _sku,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'CNPJ',
-              prefixIcon: Icon(Icons.badge),
+              labelText: 'SKU',
+              prefixIcon: Icon(Icons.tag),
+            ),
+          ),
+          const SizedBox(height: 10),
+          TextFormField(
+            controller: _preco,
+            style: const TextStyle(fontSize: 22),
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Preço',
+              prefixIcon: Icon(Icons.attach_money),
             ),
             keyboardType: TextInputType.number,
           ),
           const SizedBox(height: 10),
           TextFormField(
-            controller: _city,
+            controller: _descricao,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Cidade',
-              prefixIcon: Icon(Icons.location_city),
+              labelText: 'Descrição',
+              prefixIcon: Icon(Icons.description),
             ),
           ),
           const SizedBox(height: 10),
           TextFormField(
-            controller: _address,
+            controller: _quantidade,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Endereço',
-              prefixIcon: Icon(Icons.location_on),
+              labelText: 'Quantidade',
+              prefixIcon: Icon(Icons.add_shopping_cart),
             ),
+            keyboardType: TextInputType.number,
           ),
           const SizedBox(height: 10),
           TextFormField(
-            controller: _phone,
+            controller: _categoria,
             style: const TextStyle(fontSize: 22),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Telefone',
-              prefixIcon: Icon(Icons.phone),
+              labelText: 'Categoria',
+              prefixIcon: Icon(Icons.category),
             ),
-            keyboardType: TextInputType.phone,
-          ),
-          const SizedBox(height: 10),
-          TextFormField(
-            controller: _email,
-            style: const TextStyle(fontSize: 22),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'E-mail',
-              prefixIcon: Icon(Icons.email),
-            ),
-            keyboardType: TextInputType.emailAddress,
+            readOnly: true,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,7 +150,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                   ),
                   const SizedBox(width: 10),
                   const Text(
-                    'Cadastro Ativo',
+                    'Produto Ativo',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -225,38 +159,19 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
-              const Text(
-                'Observações:',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: _observation,
-                maxLines: 5,
-                decoration: InputDecoration(
-                  hintText: 'Digite suas observações aqui...',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-              ),
             ],
-          )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildComprarButton() {
+  Widget _buildSalvarButton() {
     return Container(
       alignment: Alignment.bottomCenter,
       margin: const EdgeInsets.only(top: 24),
       child: ElevatedButton(
-        onPressed: comprar,
+        onPressed: salvar,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,

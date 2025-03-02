@@ -22,7 +22,7 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
 
   @override
   Widget build(BuildContext context) {
-    final conta = context.watch<ContaRepository>();
+    // final conta = context.watch<ContaRepository>();
     final loc = context.read<AppSettings>().locale;
     NumberFormat real =
         NumberFormat.currency(locale: loc['locale'], name: loc['name']);
@@ -35,20 +35,20 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
         padding: const EdgeInsets.all(12),
         child: Column(
           children: [
-            ListTile(
-              title: const Text('Saldo'),
-              subtitle: Text(
-                real.format(conta.saldo),
-                style: const TextStyle(
-                  fontSize: 25,
-                  color: Colors.indigo,
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () => updateSaldo(),
-                icon: const Icon(Icons.edit),
-              ),
-            ),
+            // ListTile(
+            //   title: const Text('Saldo'),
+            //   subtitle: Text(
+            //     real.format(conta.saldo),
+            //     style: const TextStyle(
+            //       fontSize: 25,
+            //       color: Colors.indigo,
+            //     ),
+            //   ),
+            //   trailing: IconButton(
+            //     onPressed: () => updateSaldo(),
+            //     icon: const Icon(Icons.edit),
+            //   ),
+            // ),
             const Divider(),
             ListTile(
               leading: const Icon(Icons.camera_alt),
@@ -119,8 +119,8 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
     final valor = TextEditingController();
 
     // Obtendo a conta do Provider
-    final conta = context.read<ContaRepository>();
-    valor.text = conta.saldo.toString();
+    // final conta = context.read<ContaRepository>();
+    // valor.text = conta.saldo.toString();
 
     AlertDialog dialog = AlertDialog(
       title: const Text('Atualizar o saldo'),
@@ -144,15 +144,15 @@ class _ConfiguracoesPageState extends State<ConfiguracoesPage> {
           onPressed: () => Navigator.pop(context),
           child: const Text('Cancelar'),
         ),
-        TextButton(
-          onPressed: () {
-            if (form.currentState!.validate()) {
-              conta.setSaldo(double.parse(valor.text));
-              Navigator.pop(context);
-            }
-          },
-          child: const Text('Salvar'),
-        ),
+        // TextButton(
+        //   onPressed: () {
+        //     if (form.currentState!.validate()) {
+        //       conta.setSaldo(double.parse(valor.text));
+        //       Navigator.pop(context);
+        //     }
+        //   },
+        //   child: const Text('Salvar'),
+        // ),
       ],
     );
 
