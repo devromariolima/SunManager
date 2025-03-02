@@ -16,9 +16,11 @@ class MoedasPage extends StatefulWidget {
 
 class _MoedasPageState extends State<MoedasPage> {
   late List<Integrators> tabela;
+  late List<Integrators> filteredTabela;
   late NumberFormat real;
   late Map<String, String> loc;
   late MoedaRepository moedas;
+  TextEditingController searchController = TextEditingController();
 
   readNumberFormat() {
     loc = context.watch<AppSettings>().locale;
@@ -91,41 +93,76 @@ class _MoedasPageState extends State<MoedasPage> {
     });
   }
 
+  // Função para filtrar os dados com base na pesquisa
+  void filterData(String query) {
+    final filtered = tabela
+        .where((moeda) =>
+            moeda.name.toLowerCase().contains(query.toLowerCase()) ||
+            moeda.cnpj.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    setState(() {
+      filteredTabela = filtered;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     moedas = Provider.of<MoedaRepository>(context); //verificar depois
     tabela = MoedaRepository.tabela;
+    filteredTabela = tabela; // Inicializa com todos os dados
     readNumberFormat();
+
     return Scaffold(
       appBar: appApbarDinamica(),
-      body: ListView.separated(
-        itemBuilder: (BuildContext context, int moeda) {
-          return ListTile(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(12)),
-            ),
-            leading: SizedBox(
-              width: 40,
-              child: Image.network(tabela[moeda].icone),
-            ),
-            title: Row(
-              children: [
-                Text(
-                  tabela[moeda].name,
-                  style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                  ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              controller: searchController,
+              onChanged: (query) => filterData(query),
+              decoration: InputDecoration(
+                labelText: 'Buscar Integrador',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
-              ],
+              ),
             ),
-            trailing: Text((tabela[moeda].cnpj)),
-            onTap: () => mostrarDetalhes(tabela[moeda]),
-          );
-        },
-        padding: const EdgeInsets.all(16),
-        separatorBuilder: (_, __) => const Divider(),
-        itemCount: tabela.length,
+          ),
+          Expanded(
+            child: ListView.separated(
+              itemBuilder: (BuildContext context, int moeda) {
+                return ListTile(
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  leading: SizedBox(
+                    width: 40,
+                    child: Image.network(filteredTabela[moeda].icone),
+                  ),
+                  title: Row(
+                    children: [
+                      Text(
+                        filteredTabela[moeda].name,
+                        style: const TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  trailing: Text((filteredTabela[moeda].cnpj)),
+                  onTap: () => mostrarDetalhes(filteredTabela[moeda]),
+                );
+              },
+              padding: const EdgeInsets.all(16),
+              separatorBuilder: (_, __) => const Divider(),
+              itemCount: filteredTabela.length,
+            ),
+          ),
+        ],
       ),
     );
   }
