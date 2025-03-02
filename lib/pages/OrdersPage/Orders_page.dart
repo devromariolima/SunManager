@@ -34,8 +34,29 @@ class _FavoritasPageState extends State<FavoritasPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pedidos Favoritos'),
+        title: const Text(
+          'Pedidos',
+          style: TextStyle(
+            fontSize: 20,
+            fontStyle: FontStyle.italic,
+            color: Colors.white,
+            fontFamily: 'Roboto',
+          ),
+        ),
+        centerTitle: true,
         backgroundColor: Colors.blue,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+          ),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Container(
         color: Colors.indigo.withOpacity(0.05),
