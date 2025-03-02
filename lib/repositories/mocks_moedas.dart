@@ -15,12 +15,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'O sistema solar foi instalado com 98% de eficiência na captação de energia',
-      // mudancaHora: 0.5,
-      // mudancaDia: 2.0,
-      // mudancaSemana: 5.0,
-      // mudancaMes: 12.0,
-      // mudancaAno: 45.0,
-      // mudancaPeriodoTotal: 150.0,
     ),
     Integrators(
       name: 'EnerSun Integradores',
@@ -34,12 +28,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Manutenção preventiva realizada nas conexões elétricas, tudo dentro dos parâmetros',
-      // mudancaHora: -0.2,
-      // mudancaDia: 1.5,
-      // mudancaSemana: 4.2,
-      // mudancaMes: 10.8,
-      // mudancaAno: 38.5,
-      // mudancaPeriodoTotal: 120.0,
     ),
     Integrators(
       name: 'BrightVolt Energia',
@@ -53,12 +41,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Painéis solares limpos em 12/02/2025, incremento de 5% na produção de energia',
-      // mudancaHora: 0.1,
-      // mudancaDia: 0.9,
-      // mudancaSemana: 3.1,
-      // mudancaMes: 8.0,
-      // mudancaAno: 20.0,
-      // mudancaPeriodoTotal: 85.0,
     ),
     Integrators(
       name: 'Solaris Soluções',
@@ -72,12 +54,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Conexão do inversor ao medidor de rede revisada, sem falhas detectadas',
-      // mudancaHora: -0.3,
-      // mudancaDia: 1.0,
-      // mudancaSemana: 2.8,
-      // mudancaMes: 6.5,
-      // mudancaAno: 15.0,
-      // mudancaPeriodoTotal: 60.0,
     ),
     Integrators(
       name: 'EcoSun Engenharia',
@@ -91,12 +67,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Recomendação de aumento da capacidade de armazenamento das baterias.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'Photon Power',
@@ -110,12 +80,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Inversor apresentou sobrecarga em horários de pico, recomendação de upgrade.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'SolTech Renováveis',
@@ -129,12 +93,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Configuração do sistema otimizada para melhor aproveitamento das horas de sol',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'Verde Luz Sistemas',
@@ -148,12 +106,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Monitoramento remoto do sistema ativado, relatórios semanais enviados ao cliente.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'Helios Engenharia Solar',
@@ -167,12 +119,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Falha intermitente na comunicação entre o inversor e o software de monitoramento',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'Lumina Solar Solutions',
@@ -186,12 +132,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Instalação de painéis solares adicionais recomendada para aumentar a capacidade.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'SunVolt Serviços',
@@ -205,12 +145,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Teste de tensão realizado no sistema, dentro dos padrões de segurança',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'BlueSky Energia',
@@ -224,12 +158,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Painéis solares orientados corretamente, sem necessidade de ajustes.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'SolarWay Integradores',
@@ -243,12 +171,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Eficiência do sistema solar caiu 3% devido ao acúmulo de sujeira nos painéis',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'PowerGreen Engenharia',
@@ -262,12 +184,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'inversor solar foi atualizado para o firmware mais recente, melhora no desempenho.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'SolSmart Soluções',
@@ -281,12 +197,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Sistema de backup ativado com sucesso, garantindo energia durante interrupções',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'EcoLight Energia',
@@ -300,12 +210,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Baterias de lítio substituídas por novas com maior capacidade de armazenamento.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'Aurora Solar Experts',
@@ -319,12 +223,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Inversor está operando próximo ao limite de sua capacidade, monitoramento recomendado',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'HelioVolt Instalações',
@@ -338,12 +236,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Redução de 10% na produção de energia durante o inverno, esperado para a região.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'SunFlow Energia',
@@ -357,12 +249,6 @@ class MoedaRepository {
       isActive: true,
       observation:
           'Sistema integrado à rede elétrica com sucesso, venda de excedente de energia ativa.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
     Integrators(
       name: 'NovaEnergia Integradores',
@@ -376,12 +262,6 @@ class MoedaRepository {
       isActive: false,
       observation:
           'Relatório de desempenho enviado ao cliente, mostrando 20% de economia mensal na conta.',
-      // mudancaHora: 0.2,
-      // mudancaDia: 1.2,
-      // mudancaSemana: 3.5,
-      // mudancaMes: 9.2,
-      // mudancaAno: 25.0,
-      // mudancaPeriodoTotal: 90.0,
     ),
   ];
 
