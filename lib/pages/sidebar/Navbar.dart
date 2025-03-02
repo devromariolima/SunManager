@@ -125,8 +125,8 @@ class Navbar extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.star),
-            title: const Text('Favoritos'),
+            leading: const Icon(Icons.assignment),
+            title: const Text('Pedidos'),
             onTap: () {},
           ),
           const Divider(),
