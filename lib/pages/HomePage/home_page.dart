@@ -1,6 +1,6 @@
 import 'package:cripto/pages/Configuracoes_page.dart';
 // import 'package:cripto/pages/carteira_page.dart';
-import 'package:cripto/pages/favoritas_page.dart';
+import 'package:cripto/pages/OrdersPage/favoritas_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
 import 'package:cripto/pages/products/products_page.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           Icon(Icons.list, size: 30, color: Colors.white),
           Icon(Icons.production_quantity_limits, size: 30, color: Colors.white),
-          Icon(Icons.star, size: 30, color: Colors.white),
+          Icon(Icons.assignment, size: 30, color: Colors.white),
           Icon(Icons.auto_graph, size: 30, color: Colors.white),
           Icon(Icons.settings, size: 30, color: Colors.white),
         ],
