@@ -38,6 +38,16 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     _observation.text = widget.moeda.observation;
   }
 
+  void salvar() {
+    if (_formKey.currentState!.validate()) {
+      // Ação de salvar produto, pode ser para atualizar o banco ou algo relacionado
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Cadastro Salvo')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,26 +215,26 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
     return Container(
       alignment: Alignment.bottomCenter,
       margin: const EdgeInsets.only(top: 24),
-      // child: ElevatedButton(
-      //   onPressed: comprar,
-      //   style: ElevatedButton.styleFrom(
-      //     backgroundColor: Colors.blue,
-      //     foregroundColor: Colors.white,
-      //   ),
-      //   child: const Row(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       Icon(Icons.check),
-      //       Padding(
-      //         padding: EdgeInsets.all(16),
-      //         child: Text(
-      //           'Salvar',
-      //           style: TextStyle(fontSize: 20),
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+      child: ElevatedButton(
+        onPressed: salvar,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.check),
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Salvar',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

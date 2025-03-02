@@ -1,6 +1,7 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
+import 'package:cripto/pages/sidebar/Navbar.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -18,7 +19,6 @@ class _MoedasPageState extends State<MoedasPage> {
   late NumberFormat real;
   late Map<String, String> loc;
   List<Integrators> selecionadas = [];
-  // late FavoritasRepository favoritas;
   late MoedaRepository moedas;
 
   readNumberFormat() {
@@ -48,7 +48,22 @@ class _MoedasPageState extends State<MoedasPage> {
         backgroundColor: Colors.blue,
         leading: IconButton(
             onPressed: () {},
-            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.menu))),
+            icon: IconButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const Align(
+                        alignment: Alignment.centerLeft,
+                        child: FractionallySizedBox(
+                          widthFactor: 0.8, //
+                          child: Navbar(),
+                        ),
+                      );
+                    },
+                  );
+                },
+                icon: const Icon(Icons.menu))),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(25),
