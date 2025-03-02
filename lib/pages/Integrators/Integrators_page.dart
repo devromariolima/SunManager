@@ -1,6 +1,7 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
+import 'package:cripto/pages/sidebar/Navbar.dart';
 import 'package:cripto/repositories/favoritas_repository.dart';
 import 'package:cripto/repositories/mocks_moedas.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,14 @@ class _MoedasPageState extends State<MoedasPage> {
         backgroundColor: Colors.blue,
         leading: IconButton(
             onPressed: () {},
-            icon: IconButton(onPressed: () {}, icon: const Icon(Icons.menu))),
+            icon: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Navbar()),
+                  );
+                },
+                icon: const Icon(Icons.menu))),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(25),

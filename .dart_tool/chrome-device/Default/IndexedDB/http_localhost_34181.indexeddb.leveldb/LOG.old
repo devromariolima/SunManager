@@ -1,0 +1,25 @@
+2025/02/28-15:49:48.702 8b58 Reusing MANIFEST /tmp/flutter_tools.QOYRBQ/flutter_tools_chrome_device.USGPRL/Default/IndexedDB/http_localhost_34181.indexeddb.leveldb/MANIFEST-000001
+2025/02/28-15:49:48.703 8b58 Recovering log #4
+2025/02/28-15:49:48.703 8b58 Reusing old log /tmp/flutter_tools.QOYRBQ/flutter_tools_chrome_device.USGPRL/Default/IndexedDB/http_localhost_34181.indexeddb.leveldb/000004.log 
+2025/02/28-15:49:48.710 8b5a Level-0 table #8: started
+2025/02/28-15:49:48.712 8b5a Level-0 table #8: 3319 bytes OK
+2025/02/28-15:49:48.714 8b5a Delete type=0 #4
+2025/02/28-15:49:48.715 8b59 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/28-15:51:07.115 8b59 Compacting 1@1 + 1@2 files
+2025/02/28-15:51:07.121 8b59 Generated table #9@1: 40 keys, 2983 bytes
+2025/02/28-15:51:07.121 8b59 Compacted 1@1 + 1@2 files => 2983 bytes
+2025/02/28-15:51:07.123 8b59 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/02/28-15:51:07.123 8b59 Delete type=2 #5
+2025/02/28-15:51:07.123 8b59 Delete type=2 #8
+2025/02/28-16:10:52.119 8b59 Level-0 table #11: started
+2025/02/28-16:10:52.121 8b59 Level-0 table #11: 2845 bytes OK
+2025/02/28-16:10:52.123 8b59 Delete type=0 #7
+2025/02/28-16:10:52.123 8b5a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2025/02/28-16:10:52.123 8b59 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x01C\x00f\x00i\x00r\x00e\x00b\x00a\x00s\x00e\x00:\x00a\x00u\x00t\x00h\x00U\x00s\x00e\x00r\x00:\x00A\x00I\x00z\x00a\x00S\x00y\x00C\x00n\x00G\x00P\x00P\x009\x00R\x00H\x00d\x00y\x00j\x00R\x00c\x00l\x00I\x007\x00C\x00d\x00X\x00W\x00V\x00g\x007\x00g\x009\x00A\x00A\x00V\x00d\x00N\x00m\x00b\x00Y\x00:\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]' @ 236 : 1
+2025/02/28-16:10:52.123 8b59 Compacting 1@1 + 1@2 files
+2025/02/28-16:10:52.126 8b59 Generated table #12@1: 36 keys, 2837 bytes
+2025/02/28-16:10:52.126 8b59 Compacted 1@1 + 1@2 files => 2837 bytes
+2025/02/28-16:10:52.128 8b59 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/02/28-16:10:52.128 8b59 Delete type=2 #11
+2025/02/28-16:10:52.128 8b59 Delete type=2 #9
+2025/02/28-16:10:52.130 8b59 Manual compaction at level-1 from '\x00\x02\x01\x02\x01C\x00f\x00i\x00r\x00e\x00b\x00a\x00s\x00e\x00:\x00a\x00u\x00t\x00h\x00U\x00s\x00e\x00r\x00:\x00A\x00I\x00z\x00a\x00S\x00y\x00C\x00n\x00G\x00P\x00P\x009\x00R\x00H\x00d\x00y\x00j\x00R\x00c\x00l\x00I\x007\x00C\x00d\x00X\x00W\x00V\x00g\x007\x00g\x009\x00A\x00A\x00V\x00d\x00N\x00m\x00b\x00Y\x00:\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]' @ 236 : 1 .. (end); will stop at (end)
