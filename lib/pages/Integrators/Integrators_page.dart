@@ -16,11 +16,9 @@ class IntegratorsPage extends StatefulWidget {
 
 class _IntegratorsPageState extends State<IntegratorsPage> {
   late List<Integrators> tabela;
-  late List<Integrators> filteredTabela;
+  late IntegratorsRepository integrators;
   late NumberFormat real;
   late Map<String, String> loc;
-  late IntegratorsRepository integrators;
-  TextEditingController searchController = TextEditingController();
 
   readNumberFormat() {
     loc = context.watch<AppSettings>().locale;
@@ -39,39 +37,43 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
         ),
       ),
       centerTitle: true,
-      actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.notifications),
-          onPressed: () {},
-        ),
-      ],
       backgroundColor: Colors.blue,
-      leading: IconButton(
-          onPressed: () {},
-          icon: IconButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const Align(
-                      alignment: Alignment.centerLeft,
-                      child: FractionallySizedBox(
-                        widthFactor: 0.8, //
-                        child: Navbar(),
-                      ),
-                    );
-                  },
-                );
-              },
-              icon: const Icon(Icons.menu))),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(25),
               bottomRight: Radius.circular(25))),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () async {
+            await showSearch(
+              context: context,
+              delegate: IntegratorSearchDelegate(integrators: tabela),
+            );
+          },
+        ),
+      ],
+      leading: IconButton(
+        icon: const Icon(Icons.menu),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return const Align(
+                alignment: Alignment.centerLeft,
+                child: FractionallySizedBox(
+                  widthFactor: 0.8,
+                  child: Navbar(),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 
-  mostrarDetalhes(Integrators moeda) {
+  mostrarDetalhes(Integrators integrator) {
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -87,17 +89,9 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => MoedasDetalhesPage(moeda: moeda),
+          builder: (_) => MoedasDetalhesPage(moeda: integrator),
         ),
       );
-    });
-  }
-
-  void _filterTabela(String query) {
-    setState(() {
-      filteredTabela = tabela.where((integrator) {
-        return integrator.name.toLowerCase().contains(query.toLowerCase());
-      }).toList();
     });
   }
 
@@ -106,65 +100,119 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
     integrators = Provider.of<IntegratorsRepository>(context);
     tabela = IntegratorsRepository.tabela;
 
-    filteredTabela = tabela;
-
     readNumberFormat();
-
     return Scaffold(
       appBar: appApbarDinamica(),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: searchController,
-              onChanged: (query) {
-                _filterTabela(query);
-              },
-              decoration: InputDecoration(
-                labelText: 'Buscar Integrador',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
+      body: ListView.separated(
+        itemBuilder: (BuildContext context, int integrator) {
+          return ListTile(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
-          ),
-          Expanded(
-            child: filteredTabela.isEmpty
-                ? const Center(child: Text('Nenhum integrador encontrado.'))
-                : ListView.separated(
-                    itemBuilder: (BuildContext context, int moeda) {
-                      return ListTile(
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                        ),
-                        leading: SizedBox(
-                          width: 40,
-                          child: Image.network(filteredTabela[moeda].icone),
-                        ),
-                        title: Row(
-                          children: [
-                            Text(
-                              filteredTabela[moeda].name,
-                              style: const TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        trailing: Text((filteredTabela[moeda].cnpj)),
-                        onTap: () => mostrarDetalhes(filteredTabela[moeda]),
-                      );
-                    },
-                    padding: const EdgeInsets.all(16),
-                    separatorBuilder: (_, __) => const Divider(),
-                    itemCount: filteredTabela.length,
+            leading: SizedBox(
+              width: 40,
+              child: Image.network(tabela[integrator].icone),
+            ),
+            title: Row(
+              children: [
+                Text(
+                  tabela[integrator].name,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
                   ),
-          ),
-        ],
+                ),
+              ],
+            ),
+            trailing: Text(tabela[integrator].cnpj),
+            onTap: () => mostrarDetalhes(tabela[integrator]),
+          );
+        },
+        padding: const EdgeInsets.all(16),
+        separatorBuilder: (_, __) => const Divider(),
+        itemCount: tabela.length,
       ),
+    );
+  }
+}
+
+class IntegratorSearchDelegate extends SearchDelegate {
+  final List<Integrators> integrators;
+
+  IntegratorSearchDelegate({required this.integrators});
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    final List<Integrators> result = integrators
+        .where((integrator) =>
+            integrator.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return ListView.separated(
+      itemCount: result.length,
+      itemBuilder: (BuildContext context, int index) {
+        final integrator = result[index];
+        return ListTile(
+          leading: Image.network(integrator.icone),
+          title: Text(integrator.name),
+          onTap: () {
+            close(context, null);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => MoedasDetalhesPage(moeda: integrator),
+              ),
+            );
+          },
+        );
+      },
+      separatorBuilder: (_, __) => const Divider(),
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final List<Integrators> suggestionList = integrators
+        .where((integrator) =>
+            integrator.name.toLowerCase().contains(query.toLowerCase()))
+        .toList();
+
+    return ListView.separated(
+      itemCount: suggestionList.length,
+      itemBuilder: (BuildContext context, int index) {
+        final integrator = suggestionList[index];
+        return ListTile(
+          leading: Image.network(integrator.icone),
+          title: Text(integrator.name),
+          onTap: () {
+            query = integrator.name;
+            showResults(context);
+          },
+        );
+      },
+      separatorBuilder: (_, __) => const Divider(),
     );
   }
 }
