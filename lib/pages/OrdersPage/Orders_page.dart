@@ -1,4 +1,6 @@
+import 'package:cripto/repositories/mock_orders.dart';
 import 'package:flutter/material.dart';
+import 'package:cripto/models/orders_model.dart';
 
 class FavoritasPage extends StatefulWidget {
   const FavoritasPage({super.key});
@@ -8,27 +10,7 @@ class FavoritasPage extends StatefulWidget {
 }
 
 class _FavoritasPageState extends State<FavoritasPage> {
-  // Mock de dados para os pedidos
-  final List<Map<String, String>> pedidos = [
-    {
-      'valor': 'R\$ 12.500,00',
-      'cliente': 'João Silva',
-      'integrador': 'Energia Solar Ltda.',
-      'cidade': 'São Paulo'
-    },
-    {
-      'valor': 'R\$ 8.750,00',
-      'cliente': 'Maria Oliveira',
-      'integrador': 'SolarTech',
-      'cidade': 'Rio de Janeiro'
-    },
-    {
-      'valor': 'R\$ 15.000,00',
-      'cliente': 'Carlos Souza',
-      'integrador': 'EcoSolar',
-      'cidade': 'Belo Horizonte'
-    },
-  ];
+  final List<OrdersModel> pedidos = OrdersRepository.pedidos;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +36,9 @@ class _FavoritasPageState extends State<FavoritasPage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              // Ação de busca
+            },
           ),
         ],
       ),
@@ -72,10 +56,10 @@ class _FavoritasPageState extends State<FavoritasPage> {
                 itemBuilder: (_, index) {
                   final pedido = pedidos[index];
                   return MoedaCard(
-                    valor: pedido['valor']!,
-                    cliente: pedido['cliente']!,
-                    integrador: pedido['integrador']!,
-                    cidade: pedido['cidade']!,
+                    valor: pedido.valor,
+                    cliente: pedido.cliente,
+                    integrador: pedido.integrador,
+                    cidade: pedido.cidade,
                   );
                 },
               ),
@@ -90,7 +74,7 @@ class MoedaCard extends StatelessWidget {
   final String integrador;
   final String cidade;
 
-  MoedaCard({
+  const MoedaCard({
     Key? key,
     required this.valor,
     required this.cliente,
