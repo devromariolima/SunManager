@@ -28,7 +28,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthService()),
-        Provider(create: (context) => MoedaRepository()),
+        Provider(create: (context) => IntegratorsRepository()),
         Provider(create: (context) => ProductRepository()),
         // ChangeNotifierProvider(
         //     create: (context) => ContaRepository(

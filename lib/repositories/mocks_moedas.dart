@@ -1,6 +1,6 @@
 import 'package:cripto/models/Integrators_model.dart';
 
-class MoedaRepository {
+class IntegratorsRepository {
   static List<Integrators> tabela = [
     Integrators(
       name: 'Solarium Tech',
