@@ -1,5 +1,5 @@
-import 'package:cripto/pages/home_page.dart';
-import 'package:cripto/pages/login_page.dart';
+import 'package:cripto/pages/HomePage/home_page.dart';
+import 'package:cripto/pages/LoginPage/login_page.dart';
 import 'package:cripto/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
