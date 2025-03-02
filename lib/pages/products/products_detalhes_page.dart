@@ -1,6 +1,5 @@
 import 'package:cripto/models/Products_model.dart';
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
 
 class ProdutoDetalhesPage extends StatefulWidget {
   final Products produto;

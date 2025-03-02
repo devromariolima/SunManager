@@ -34,7 +34,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
         style: TextStyle(
           fontSize: 20,
           fontStyle: FontStyle.italic,
-          color: Colors.black,
+          color: Colors.white,
           fontFamily: 'Roboto',
         ),
       ),

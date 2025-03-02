@@ -19,7 +19,6 @@ class _ProductsPageState extends State<ProductsPage> {
   late List<Products> tabela;
   late NumberFormat real;
   late Map<String, String> loc;
-  List<Products> selecionadas = [];
   late ProductRepository productList;
 
   readNumberFormat() {
@@ -28,24 +27,23 @@ class _ProductsPageState extends State<ProductsPage> {
   }
 
   appApbarDinamica() {
-    if (selecionadas.isEmpty) {
-      return AppBar(
-        title: const Text('Estoque'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      );
-    } else {
-      return AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            setState(() {
-              selecionadas = [];
-            });
-          },
+    return AppBar(
+      title: const Text(
+        'Estoque',
+        style: TextStyle(
+          fontSize: 20,
+          fontStyle: FontStyle.italic,
+          color: Colors.white,
+          fontFamily: 'Roboto',
         ),
-      );
-    }
+      ),
+      centerTitle: true,
+      backgroundColor: Colors.blue,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(25),
+              bottomRight: Radius.circular(25))),
+    );
   }
 
   mostrarDetalhes(Products products) {
@@ -83,14 +81,10 @@ class _ProductsPageState extends State<ProductsPage> {
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
-            leading: (selecionadas.contains(tabela[produto]))
-                ? const CircleAvatar(
-                    child: Icon(Icons.check),
-                  )
-                : SizedBox(
-                    width: 40,
-                    child: Image.network(tabela[produto].icone),
-                  ),
+            leading: SizedBox(
+              width: 40,
+              child: Image.network(tabela[produto].icone),
+            ),
             title: Row(
               children: [
                 Text(
