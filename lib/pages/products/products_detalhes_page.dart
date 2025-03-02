@@ -19,7 +19,7 @@ class _ProdutoDetalhesPageState extends State<ProdutoDetalhesPage> {
   final TextEditingController _descricao = TextEditingController();
   final TextEditingController _quantidade = TextEditingController();
   final TextEditingController _categoria = TextEditingController();
-  bool _isActive = false; // Estado do checkbox
+  bool _isActive = false;
 
   @override
   void initState() {
@@ -29,13 +29,12 @@ class _ProdutoDetalhesPageState extends State<ProdutoDetalhesPage> {
     _preco.text = widget.produto.price.toString();
     _descricao.text = widget.produto.description;
     _quantidade.text = widget.produto.quantity.toString();
-    _isActive = true; // Supondo que o produto está ativo
-    _categoria.text = 'Energia Solar'; // Categoria fixa para energia solar
+    _isActive = true;
+    _categoria.text = 'Energia Solar';
   }
 
   void salvar() {
     if (_formKey.currentState!.validate()) {
-      // Ação de salvar produto, pode ser para atualizar o banco ou algo relacionado
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Produto salvo com sucesso')),
