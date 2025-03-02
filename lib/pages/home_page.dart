@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: pc,
         children: [
-          MoedasPage(),
+          IntegratorsPage(),
           ProductsPage(),
           FavoritasPage(),
           // CarteiraPage(),

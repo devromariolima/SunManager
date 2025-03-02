@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class MoedasPage extends StatefulWidget {
-  const MoedasPage({super.key});
+class IntegratorsPage extends StatefulWidget {
+  const IntegratorsPage({super.key});
 
   @override
-  State<MoedasPage> createState() => _MoedasPageState();
+  State<IntegratorsPage> createState() => _IntegratorsPageState();
 }
 
-class _MoedasPageState extends State<MoedasPage> {
+class _IntegratorsPageState extends State<IntegratorsPage> {
   late List<Integrators> tabela;
   late List<Integrators> filteredTabela;
   late NumberFormat real;
