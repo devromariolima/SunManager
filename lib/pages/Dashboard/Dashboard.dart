@@ -106,8 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  itemDashboard(String title, IconData iconData, Color backgroundColor) =>
-      Container(
+  itemDashboard(String title, IconData iconData, Color background) => Container(
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -123,8 +122,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                  color: Colors.blue, shape: BoxShape.circle),
+              decoration:
+                  BoxDecoration(color: background, shape: BoxShape.circle),
               child: Icon(
                 iconData,
                 color: Colors.white,
