@@ -47,11 +47,13 @@ class _ProdutoDetalhesPageState extends State<ProdutoDetalhesPage> {
       appBar: AppBar(title: Text(widget.produto.name)),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            _buildForm(),
-            _buildSalvarButton(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildForm(),
+              _buildSalvarButton(),
+            ],
+          ),
         ),
       ),
     );
