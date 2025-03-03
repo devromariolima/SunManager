@@ -2,11 +2,39 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class CarteiraPage extends StatelessWidget {
-  const CarteiraPage({super.key});
+  final bool showBackButton;
+
+  const CarteiraPage({super.key, this.showBackButton = false});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Carteira',
+          style: TextStyle(
+            fontSize: 20,
+            fontStyle: FontStyle.italic,
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+          ),
+        ),
+        leading: showBackButton
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context); // Retorna para a tela anterior
+                },
+              )
+            : null,
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -25,7 +53,7 @@ class CarteiraPage extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            _buildLegendIntegradores(), // Adiciona a legenda
+            _buildLegendIntegradores(),
             const SizedBox(height: 16),
             _buildPieChart('Integradores', _loadIntegradoresData(), 'Qtd.'),
             const SizedBox(height: 24),
@@ -61,7 +89,6 @@ class CarteiraPage extends StatelessWidget {
     );
   }
 
-  // Função para construir a legenda de Integradores
   Widget _buildLegendIntegradores() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -119,12 +146,11 @@ class CarteiraPage extends StatelessWidget {
     return data.fold(0, (sum, item) => sum + item.value);
   }
 
-  // Mock de dados de Integradores ajustado (Ativo e Inativo)
   List<PieChartSectionData> _loadIntegradoresData() {
     return [
       PieChartSectionData(
         color: Colors.greenAccent,
-        value: 70, // Quantidade de integradores ativos
+        value: 70,
         title: 'Ativo: 70',
         radius: 60.0,
         titleStyle: const TextStyle(
@@ -132,7 +158,7 @@ class CarteiraPage extends StatelessWidget {
       ),
       PieChartSectionData(
         color: Colors.redAccent,
-        value: 30, // Quantidade de integradores inativos
+        value: 30,
         title: 'Inativo: 30',
         radius: 60.0,
         titleStyle: const TextStyle(
@@ -208,7 +234,6 @@ class CarteiraPage extends StatelessWidget {
   }
 }
 
-// Classe para construir os itens da legenda
 class _LegendItem extends StatelessWidget {
   final Color color;
   final String text;
