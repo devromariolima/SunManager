@@ -82,21 +82,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 30,
                 children: [
                   itemDashboard(
-                      'videos', CupertinoIcons.play, Colors.deepOrange),
-                  itemDashboard('Graficos', CupertinoIcons.graph_circle,
-                      Colors.deepOrange),
+                      'Filiais', CupertinoIcons.globe, Colors.deepOrange),
                   itemDashboard(
-                      'Audience', CupertinoIcons.person_2, Colors.deepOrange),
-                  itemDashboard('Comments', CupertinoIcons.chat_bubble,
-                      Colors.deepOrange),
-                  itemDashboard('Revenue', CupertinoIcons.money_dollar_circle,
-                      Colors.deepOrange),
+                      'Graficos', CupertinoIcons.graph_circle, Colors.green),
+                  itemDashboard('Cadastrar integrador', CupertinoIcons.person_2,
+                      Colors.purple),
                   itemDashboard(
-                      'Upload', CupertinoIcons.add_circled, Colors.deepOrange),
-                  itemDashboard('About', CupertinoIcons.question_circle,
-                      Colors.deepOrange),
+                      'Meu Perfil', CupertinoIcons.person, Colors.brown),
+                  itemDashboard('Distribuidor',
+                      CupertinoIcons.person_2_square_stack, Colors.indigo),
                   itemDashboard(
-                      'Contact', CupertinoIcons.phone, Colors.deepOrange),
+                      'Configurações', CupertinoIcons.settings, Colors.teal),
+                  itemDashboard(
+                      'Pedidos', CupertinoIcons.square_favorites, Colors.blue),
+                  itemDashboard(
+                      'Contato', CupertinoIcons.phone, Colors.pinkAccent),
                 ],
               ),
             ),
