@@ -11,7 +11,7 @@ class CarteiraPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Carteira',
+          'Graficos',
           style: TextStyle(
             fontSize: 20,
             fontStyle: FontStyle.italic,
