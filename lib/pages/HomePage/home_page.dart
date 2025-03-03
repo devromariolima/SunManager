@@ -1,4 +1,4 @@
-import 'package:cripto/pages/Configuracoes_page.dart';
+import 'package:cripto/pages/Settings/Configuracoes_page.dart';
 import 'package:cripto/pages/Dashboard/Dashboard.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';

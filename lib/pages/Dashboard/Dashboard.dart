@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ?.copyWith(color: Colors.white),
                   ),
                   subtitle: Text(
-                    'Bom dia ',
+                    'Diretor',
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium
