@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         controller: pc,
         children: [
           HomeScreen(),
-          // IntegratorsPage(),
+          IntegratorsPage(),
           ProductsPage(),
           FavoritasPage(),
           CarteiraPage(),
@@ -52,6 +52,7 @@ class _HomePageState extends State<HomePage> {
         animationDuration: const Duration(milliseconds: 300),
         index: paginaAtual,
         items: const [
+          Icon(Icons.dashboard, size: 30, color: Colors.white),
           Icon(Icons.list, size: 30, color: Colors.white),
           Icon(Icons.production_quantity_limits, size: 30, color: Colors.white),
           Icon(Icons.assignment, size: 30, color: Colors.white),

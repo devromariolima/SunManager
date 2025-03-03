@@ -9,7 +9,9 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dashboard',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: const HomeScreen(),
     );
   }
@@ -57,7 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   trailing: const CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assetName'),
+                    backgroundImage:
+                        AssetImage('lib/assets/images/login_background.png'),
                   ),
                 ),
                 const SizedBox(
