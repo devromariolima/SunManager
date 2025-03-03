@@ -105,6 +105,8 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
       appBar: appApbarDinamica(),
       body: ListView.separated(
         itemBuilder: (BuildContext context, int integrator) {
+          final isActive = tabela[integrator]
+              .isActive; // Variável que recebe o estado de ativo/inativo
           return ListTile(
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -129,6 +131,17 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const SizedBox(height: 8), // Espaço entre o CNPJ e o status
+                Text(
+                  isActive ? 'Ativo' : 'Inativo', // Exibe "Ativo" ou "Inativo"
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
+                    color: isActive
+                        ? Colors.green
+                        : Colors.red, // Verde para ativo, vermelho para inativo
                   ),
                 ),
               ],
