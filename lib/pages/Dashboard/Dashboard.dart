@@ -1,3 +1,5 @@
+import 'package:cripto/pages/Graphics/carteira_page.dart';
+import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Settings/Configuracoes_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const CarteiraPage())),
                   ),
                   itemDashboard(
                     'Cadastrar integrador',
@@ -146,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const FavoritasPage())),
                   ),
                   itemDashboard(
                     'Contato',

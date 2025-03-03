@@ -2,7 +2,7 @@ import 'package:cripto/pages/Settings/Configuracoes_page.dart';
 import 'package:cripto/pages/Dashboard/Dashboard.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
-import 'package:cripto/pages/carteira_page.dart';
+import 'package:cripto/pages/Graphics/carteira_page.dart';
 import 'package:cripto/pages/products/products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
