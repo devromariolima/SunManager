@@ -1,193 +1,235 @@
-// import 'package:cripto/configs/app_setings.dart';
-// import 'package:cripto/models/posicao.dart';
-// import 'package:cripto/repositories/conta_repository.dart';
-// import 'package:fl_chart/fl_chart.dart';
-// import 'package:flutter/material.dart';
-// import 'package:intl/intl.dart';
-// import 'package:provider/provider.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
 
-// class CarteiraPage extends StatefulWidget {
-//   const CarteiraPage({super.key});
+class CarteiraPage extends StatelessWidget {
+  const CarteiraPage({super.key});
 
-//   @override
-//   State<CarteiraPage> createState() => _CarteiraPageState();
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Buscar dados por:',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            _buildInputField(label: "Data"),
+            _buildInputField(label: "Cidade"),
+            const SizedBox(height: 24),
+            const Text(
+              'Gráfico de Integradores',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            _buildLegendIntegradores(), // Adiciona a legenda
+            const SizedBox(height: 16),
+            _buildPieChart('Integradores', _loadIntegradoresData(), 'Qtd.'),
+            const SizedBox(height: 24),
+            const Text(
+              'Gráfico de Quantidade de Produtos',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            _buildPieChart('Produtos', _loadProdutosData(), 'Qtd.'),
+            const SizedBox(height: 24),
+            const Text(
+              'Gráfico de Número de Pedidos',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            _buildPieChart('Pedidos', _loadPedidosData(), 'Qtd.'),
+          ],
+        ),
+      ),
+    );
+  }
 
-// class _CarteiraPageState extends State<CarteiraPage> {
-//   int index = 0;
-//   double totalCarteira = 0;
-//   double saldo = 0;
-//   late NumberFormat real;
-//   // late ContaRepository conta;
+  Widget _buildInputField({required String label}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: TextField(
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: const TextStyle(fontSize: 14),
+          border: const OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
 
-//   String graficoLabel = '';
-//   double graficoValor = 0;
-//   List<Posicao> carteira = [];
+  // Função para construir a legenda de Integradores
+  Widget _buildLegendIntegradores() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        _LegendItem(color: Colors.greenAccent, text: 'Ativo'),
+        SizedBox(width: 16),
+        _LegendItem(color: Colors.redAccent, text: 'Inativo'),
+      ],
+    );
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     // conta = context.watch<ContaRepository>();
-//     final loc = context.read<AppSettings>().locale;
-//     real = NumberFormat.currency(locale: loc['locale'], name: loc['name']);
-//     // saldo = conta.saldo;
+  Widget _buildPieChart(
+      String label, List<PieChartSectionData> data, String unit) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        AspectRatio(
+          aspectRatio: 1.2,
+          child: PieChart(
+            PieChartData(
+              sectionsSpace: 5,
+              centerSpaceRadius: 60,
+              sections: data,
+              pieTouchData: PieTouchData(
+                touchCallback:
+                    (FlTouchEvent event, PieTouchResponse? pieTouchResponse) {
+                  // Lógica de toque pode ser expandida aqui
+                },
+              ),
+            ),
+          ),
+        ),
+        Column(
+          children: [
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.teal,
+              ),
+            ),
+            Text(
+              '${_calculateTotal(data).toStringAsFixed(0)} $unit',
+              style: const TextStyle(
+                fontSize: 24,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 
-//     // setTotalCarteira();
+  double _calculateTotal(List<PieChartSectionData> data) {
+    return data.fold(0, (sum, item) => sum + item.value);
+  }
 
-//     return Scaffold(
-//       // Removi o 'const' daqui
-//       body: SingleChildScrollView(
-//         padding: const EdgeInsets.only(top: 48),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             const Padding(
-//               padding: EdgeInsets.only(top: 48, bottom: 8),
-//               child: Text(
-//                 'Valor da Carteira',
-//                 style: TextStyle(fontSize: 18),
-//               ),
-//             ),
-//             Text(
-//               real.format(
-//                   totalCarteira), // Aqui, 'real' já pode ser usado sem o 'const'
-//               style: const TextStyle(
-//                 fontSize: 35,
-//                 fontWeight: FontWeight.bold,
-//                 letterSpacing: -1.5,
-//               ),
-//             ),
-//             loadGrafico(),
-//             loadHistorico()
-//           ],
-//         ),
-//       ),
-//     );
-//   }
+  // Mock de dados de Integradores ajustado (Ativo e Inativo)
+  List<PieChartSectionData> _loadIntegradoresData() {
+    return [
+      PieChartSectionData(
+        color: Colors.greenAccent,
+        value: 70, // Quantidade de integradores ativos
+        title: 'Ativo: 70',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.redAccent,
+        value: 30, // Quantidade de integradores inativos
+        title: 'Inativo: 30',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+    ];
+  }
 
-//   // setTotalCarteira() {
-//   //   final carteiraList = conta.carteira;
-//   //   setState(() {
-//   //     totalCarteira = conta.saldo;
-//   //     for (var posicao in carteiraList) {
-//   //       totalCarteira += posicao.moeda.cnpj * posicao.quantidade;
-//   //     }
-//   //   });
-//   // }
+  List<PieChartSectionData> _loadProdutosData() {
+    return [
+      PieChartSectionData(
+        color: Colors.redAccent,
+        value: 150,
+        title: '150',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.yellowAccent,
+        value: 100,
+        title: '100',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.blueAccent,
+        value: 80,
+        title: '80',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.greenAccent,
+        value: 70,
+        title: '70',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+    ];
+  }
 
-//   setGraficoDados(int index) {
-//     if (index < 0) return; // Adicione esta verificação
+  List<PieChartSectionData> _loadPedidosData() {
+    return [
+      PieChartSectionData(
+        color: Colors.pinkAccent,
+        value: 500,
+        title: '500',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.tealAccent,
+        value: 300,
+        title: '300',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+      PieChartSectionData(
+        color: Colors.amberAccent,
+        value: 200,
+        title: '200',
+        radius: 60.0,
+        titleStyle: const TextStyle(
+            fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
+      ),
+    ];
+  }
+}
 
-//     if (index == carteira.length) {
-//       graficoLabel = 'saldo';
-//       // graficoValor = conta.saldo;
-//     } else {
-//       graficoLabel = carteira[index].moeda.name;
-//       // graficoValor = carteira[index].moeda.cnpj * carteira[index].quantidade;
-//     }
-//   }
+// Classe para construir os itens da legenda
+class _LegendItem extends StatelessWidget {
+  final Color color;
+  final String text;
 
-//   loadCarteira() {
-//     // carteira = conta.carteira; // Certifique-se de carregar a carteira aqui
-//     setGraficoDados(index);
-//     final tamanhoLista = carteira.length; // Remova o +1
+  const _LegendItem({required this.color, required this.text});
 
-//     return List.generate(tamanhoLista + 1, (i) {
-//       // Adicione 1 aqui
-//       final isTouched = i == index;
-//       // final isSaldo = i == tamanhoLista; // Verifique se é o saldo
-
-//       double porcentagem = 0;
-
-//       // if (isSaldo) {
-//       //   porcentagem =
-//       //       conta.saldo / totalCarteira; // Aqui você não acessa carteira[i]
-//       // } else {
-//       //   // porcentagem =
-//       //   //     (carteira[i].moeda.cnpj * carteira[i].quantidade) / totalCarteira;
-//       // }
-//       porcentagem *= 100;
-
-//       return PieChartSectionData(
-//         color: isTouched ? Colors.tealAccent : Colors.tealAccent[400],
-//         value: porcentagem,
-//         title: '${porcentagem.toStringAsFixed(0)}%',
-//         radius: 50.0,
-//         titleStyle: TextStyle(
-//           fontSize: isTouched ? 20.0 : 20.0,
-//           fontWeight: FontWeight.bold,
-//           color: Colors.black87,
-//         ),
-//       );
-//     });
-//   }
-
-//   loadGrafico() {
-//     // return (conta.saldo < 0)
-//     //     ?
-//         Container(
-//             width: MediaQuery.of(context).size.width,
-//             height: 200,
-//             child: const Center(
-//               child: CircularProgressIndicator(),
-//             ),
-//           )
-//         : Stack(
-//             alignment: Alignment.center,
-//             children: [
-//               AspectRatio(
-//                 aspectRatio: 1,
-//                 child: PieChart(PieChartData(
-//                     sectionsSpace: 5,
-//                     centerSpaceRadius: 110,
-//                     sections: loadCarteira(),
-//                     pieTouchData: PieTouchData(
-//                       touchCallback: (FlTouchEvent event,
-//                           PieTouchResponse? pieTouchResponse) {
-//                         setState(() {
-//                           if (pieTouchResponse != null &&
-//                               pieTouchResponse.touchedSection != null) {
-//                             index = pieTouchResponse
-//                                 .touchedSection!.touchedSectionIndex;
-//                           }
-//                         });
-//                       },
-//                     ))),
-//               ),
-//               Column(
-//                 children: [
-//                   Text(
-//                     graficoLabel,
-//                     style: const TextStyle(
-//                       fontSize: 20,
-//                       color: Colors.teal,
-//                     ),
-//                   ),
-//                   Text(
-//                     real.format(graficoValor),
-//                     style: const TextStyle(
-//                       fontSize: 28,
-//                     ),
-//                   )
-//                 ],
-//               )
-//             ],
-//           );
-//   }
-
-//   // loadHistorico() {
-//   //   // final historico = conta.historico;
-//   //   final date = DateFormat('dd/MM/yyy - hh:mm');
-//   //   List<Widget> widgets = [];
-//   //   for (var operacao in historico) {
-//   //     widgets.add(ListTile(
-//   //       title: Text(operacao.moeda.name),
-//   //       subtitle: Text(date.format(operacao.dataOperacao)),
-//   //       // trailing: Text(real.format(operacao.moeda.cnpj * operacao.quantidade)),
-//   //     ));
-//   //     widgets.add(const Divider());
-//   //   }
-//   //   return Column(
-//   //     children: widgets,
-//   //   );
-//   // }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 16,
+          height: 16,
+          color: color,
+        ),
+        const SizedBox(width: 8),
+        Text(
+          text,
+          style: const TextStyle(fontSize: 14),
+        ),
+      ],
+    );
+  }
+}

@@ -1,6 +1,8 @@
 import 'package:cripto/pages/Configuracoes_page.dart';
+import 'package:cripto/pages/Dashboard/Dashboard.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
+import 'package:cripto/pages/carteira_page.dart';
 import 'package:cripto/pages/products/products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -34,10 +36,11 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: pc,
         children: [
-          IntegratorsPage(),
+          HomeScreen(),
+          // IntegratorsPage(),
           ProductsPage(),
           FavoritasPage(),
-          // CarteiraPage(),
+          CarteiraPage(),
           ConfiguracoesPage(),
         ],
         onPageChanged: setPaginAtual,
