@@ -9,14 +9,12 @@ class MeuAplicativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Moedasbase',
+      title: 'Esfera Admin',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AuthCheck(
-        
-      ),
+      home: const AuthCheck(),
     );
   }
 }

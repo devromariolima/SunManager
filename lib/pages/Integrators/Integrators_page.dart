@@ -113,18 +113,26 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
               width: 40,
               child: Image.network(tabela[integrator].icone),
             ),
-            title: Row(
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   tabela[integrator].name,
                   style: const TextStyle(
                     fontSize: 17,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8), // Espaço entre o nome e o CNPJ
+                Text(
+                  'CNPJ: ${tabela[integrator].cnpj}',
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],
             ),
-            trailing: Text(tabela[integrator].cnpj),
             onTap: () => mostrarDetalhes(tabela[integrator]),
           );
         },
