@@ -53,14 +53,16 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
       appBar: AppBar(title: Text(widget.moeda.name)),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            // _buildHeader(),
-            // getGrafico(),
-            _buildQuantidadeInfo(),
-            _buildForm(),
-            _buildComprarButton(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // _buildHeader(),
+              // getGrafico(),
+              _buildQuantidadeInfo(),
+              _buildForm(),
+              _buildComprarButton(),
+            ],
+          ),
         ),
       ),
     );

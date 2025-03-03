@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) => const CarteiraPage())),
                   ),
                   itemDashboard(
-                    'Cadastrar integrador',
+                    'integradores',
                     CupertinoIcons.person_2,
                     Colors.purple,
                     () => Navigator.push(
