@@ -1,7 +1,6 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/models/Integrators_model.dart';
 import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
-import 'package:cripto/pages/sidebar/Navbar.dart';
 import 'package:cripto/repositories/mocks_integrators.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -53,23 +52,16 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
           },
         ),
       ],
-      leading: IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return const Align(
-                alignment: Alignment.centerLeft,
-                child: FractionallySizedBox(
-                  widthFactor: 0.8,
-                  child: Navbar(),
-                ),
-              );
-            },
-          );
-        },
-      ),
+      // Exibindo o ícone de voltar apenas se não for a primeira tela da pilha de navegação
+      leading: ModalRoute.of(context)!.isFirst ||
+              !Navigator.of(context).canPop()
+          ? null // Não exibe o ícone de voltar se for a primeira tela ou não for possível voltar
+          : IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context); // Voltar para a tela anterior
+              },
+            ),
     );
   }
 

@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const FavoritasPage())),
                   ),
                   itemDashboard(
                     'Graficos',
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const FavoritasPage())),
                   ),
                   itemDashboard(
                     'Distribuidor',
@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const FavoritasPage())),
                   ),
                   itemDashboard(
                     'Configurações',
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ConfiguracoesPage())),
+                            builder: (context) => const FavoritasPage())),
                   ),
                 ],
               ),
