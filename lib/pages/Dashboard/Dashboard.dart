@@ -2,24 +2,9 @@ import 'package:cripto/pages/Graphics/carteira_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
 import 'package:cripto/pages/Settings/Configuracoes_page.dart';
+import 'package:cripto/pages/sidebar/Navbar.dart'; // Importação da Navbar
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Dashboard',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeScreen(),
-    );
-  }
-}
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,6 +30,31 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 50),
+                // Usando Row para alinhar o ícone à direita
+                Row(
+                  mainAxisAlignment:
+                      MainAxisAlignment.end, // Alinha o ícone à direita
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.menu, color: Colors.white),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return const Align(
+                              alignment: Alignment.centerLeft,
+                              child: FractionallySizedBox(
+                                widthFactor: 0.8,
+                                child:
+                                    Navbar(), // Chamada da Navbar ao clicar no ícone de menu
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
                 ListTile(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 30),
                   title: Text(
