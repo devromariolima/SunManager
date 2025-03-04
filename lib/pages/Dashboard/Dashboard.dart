@@ -22,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.zero,
         children: [
           Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: const BorderRadius.only(
+            decoration: const BoxDecoration(
+              color: Colors.blue, // Define a cor diretamente como azul
+              borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(50),
               ),
             ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Container(
-            color: Theme.of(context).primaryColor,
+            color: Colors.blue,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               decoration: const BoxDecoration(
