@@ -1,10 +1,10 @@
-import 'package:cripto/models/Integrators_model.dart';
+import 'package:cripto/models/branch_model.dart';
 import 'package:flutter/material.dart';
 
 class MoedasDetalhesPage extends StatefulWidget {
-  final Integrators moeda;
+  final BranchModel branch;
 
-  const MoedasDetalhesPage({super.key, required this.moeda});
+  const MoedasDetalhesPage({super.key, required this.branch});
 
   @override
   State<MoedasDetalhesPage> createState() => _MoedasDetalhesPageState();
@@ -28,14 +28,14 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   @override
   void initState() {
     super.initState();
-    _nomeEmpresa.text = widget.moeda.name;
-    _taxId.text = widget.moeda.cnpj;
-    _city.text = widget.moeda.city;
-    _address.text = widget.moeda.address;
-    _phone.text = widget.moeda.phone;
-    _email.text = widget.moeda.email;
-    _isActive = widget.moeda.isActive;
-    _observation.text = widget.moeda.observation;
+    _nomeEmpresa.text = widget.branch.name;
+    _taxId.text = widget.branch.cnpj;
+    _city.text = widget.branch.city;
+    _address.text = widget.branch.address;
+    _phone.text = widget.branch.phone;
+    _email.text = widget.branch.email;
+    _isActive = widget.branch.isActive;
+    _observation.text = widget.branch.observation;
   }
 
   void salvar() {
@@ -50,7 +50,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.moeda.name)),
+      appBar: AppBar(title: Text(widget.branch.name)),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: SingleChildScrollView(
@@ -79,7 +79,7 @@ class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
               color: Colors.teal.withOpacity(0.05),
             ),
             child: Text(
-              '$quantidade ${widget.moeda.address}',
+              '$quantidade ${widget.branch.address}',
               style: const TextStyle(fontSize: 20, color: Colors.teal),
             ),
           )
