@@ -6,7 +6,10 @@ file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/Esfe
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/meu_aplicativo.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/models/Integrators_model.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/models/Products_model.dart
+file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/models/branch_model.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/models/orders_model.dart
+file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/Branchs/branch_detalhes_page.dart
+file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/Branchs/branch_page.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/Dashboard/Dashboard.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/Graphics/carteira_page.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/HomePage/home_page.dart
@@ -19,6 +22,7 @@ file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/Esfe
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/products/products_detalhes_page.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/products/products_page.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/pages/sidebar/Navbar.dart
+file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/repositories/mock_branch.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/repositories/mock_orders.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/repositories/mocks_integrators.dart
 file:///home/romario/%C3%81rea%20de%20Trabalho/Projetos%20pessoais%20github/EsferaAdmin/lib/repositories/mocks_products.dart
