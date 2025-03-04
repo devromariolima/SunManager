@@ -1,5 +1,6 @@
 import 'package:cripto/configs/app_setings.dart';
 import 'package:cripto/meu_aplicativo.dart';
+import 'package:cripto/repositories/mock_branch.dart';
 import 'package:cripto/repositories/mocks_integrators.dart';
 import 'package:cripto/repositories/mocks_products.dart';
 import 'package:cripto/services/auth_service.dart';
@@ -28,6 +29,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => AuthService()),
         Provider(create: (context) => IntegratorsRepository()),
         Provider(create: (context) => ProductRepository()),
+        Provider(create: (context) => BranchRepository()),
         // ChangeNotifierProvider(
         //     create: (context) => ContaRepository(
         //           moedas: context.read<MoedaRepository>(),

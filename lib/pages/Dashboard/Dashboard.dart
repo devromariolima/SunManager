@@ -1,3 +1,4 @@
+import 'package:cripto/pages/Branchs/branch_page.dart';
 import 'package:cripto/pages/Graphics/carteira_page.dart';
 import 'package:cripto/pages/Integrators/Integrators_page.dart';
 import 'package:cripto/pages/OrdersPage/Orders_page.dart';
@@ -102,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const FavoritasPage())),
+                            builder: (context) => const BranchPage())),
                   ),
                   itemDashboard(
                     'Graficos',

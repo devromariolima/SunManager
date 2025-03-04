@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class IntegratorsPage extends StatefulWidget {
-  const IntegratorsPage({super.key});
+class BranchPage extends StatefulWidget {
+  const BranchPage({super.key});
 
   @override
-  State<IntegratorsPage> createState() => _IntegratorsPageState();
+  State<BranchPage> createState() => _BranchPageState();
 }
 
-class _IntegratorsPageState extends State<IntegratorsPage> {
+class _BranchPageState extends State<BranchPage> {
   late List<BranchModel> tabela;
   late BranchRepository branch;
   late NumberFormat real;
@@ -27,7 +27,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
   appApbarDinamica() {
     return AppBar(
       title: const Text(
-        'Integradores',
+        'Filiais',
         style: TextStyle(
           fontSize: 20,
           fontStyle: FontStyle.italic,
@@ -103,10 +103,10 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
-            leading: SizedBox(
-              width: 40,
-              child: Image.network(tabela[branch].icone),
-            ),
+            // leading: SizedBox(
+            //   width: 40,
+            //   child: Image.network(tabela[branch].icone),
+            // ),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -186,7 +186,7 @@ class IntegratorSearchDelegate extends SearchDelegate {
       itemBuilder: (BuildContext context, int index) {
         final branch = result[index];
         return ListTile(
-          leading: Image.network(branch.icone),
+          // leading: Image.network(branch.icone),
           title: Text(branch.name),
           onTap: () {
             close(context, null);
@@ -215,7 +215,7 @@ class IntegratorSearchDelegate extends SearchDelegate {
       itemBuilder: (BuildContext context, int index) {
         final branch = suggestionList[index];
         return ListTile(
-          leading: Image.network(branch.icone),
+          // leading: Image.network(branch.icone),
           title: Text(branch.name),
           onTap: () {
             query = branch.name;

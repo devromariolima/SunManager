@@ -4,7 +4,7 @@ class BranchRepository {
   static List<BranchModel> filiais = [
     BranchModel(
       uid: '1',
-      name: 'Filial São Paulo',
+      name: 'PROMOÇÕES',
       address: 'Av. Paulista, 1000',
       city: 'São Paulo',
       zipcode: '01310-100',
@@ -18,7 +18,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '2',
-      name: 'Filial Rio de Janeiro',
+      name: 'NAVEGANTES',
       address: 'Rua Copacabana, 200',
       city: 'Rio de Janeiro',
       zipcode: '22050-001',
@@ -32,7 +32,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '3',
-      name: 'Filial Belo Horizonte',
+      name: 'ITAPEVI',
       address: 'Av. Afonso Pena, 300',
       city: 'Belo Horizonte',
       zipcode: '30130-001',
@@ -46,7 +46,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '4',
-      name: 'Filial Curitiba',
+      name: 'USINAS',
       address: 'Rua das Flores, 400',
       city: 'Curitiba',
       zipcode: '80010-010',
@@ -60,7 +60,21 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '5',
-      name: 'Filial Porto Alegre',
+      name: 'PERNAMBUCO',
+      address: 'Av. Borges de Medeiros, 500',
+      city: 'Porto Alegre',
+      zipcode: '90010-150',
+      cnpj: '56.789.012/0001-05',
+      icone: 'poa_icon.png',
+      phone: '(51) 4444-4444',
+      email: 'poa@empresa.com',
+      isActive: true,
+      observation: 'Filial no sul',
+      serviceregion: 'RS',
+    ),
+    BranchModel(
+      uid: '5',
+      name: 'ITUPEVA',
       address: 'Av. Borges de Medeiros, 500',
       city: 'Porto Alegre',
       zipcode: '90010-150',
