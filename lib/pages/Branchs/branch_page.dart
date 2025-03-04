@@ -1,8 +1,7 @@
 import 'package:cripto/configs/app_setings.dart';
-import 'package:cripto/models/Integrators_model.dart';
-import 'package:cripto/pages/Integrators/Integrators_detalhes_page.dart';
-
-import 'package:cripto/repositories/mocks_integrators.dart';
+import 'package:cripto/models/branch_model.dart';
+import 'package:cripto/pages/Branchs/branch_detalhes_page.dart';
+import 'package:cripto/repositories/mock_branch.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -15,8 +14,8 @@ class IntegratorsPage extends StatefulWidget {
 }
 
 class _IntegratorsPageState extends State<IntegratorsPage> {
-  late List<Integrators> tabela;
-  late IntegratorsRepository integrators;
+  late List<BranchModel> tabela;
+  late BranchRepository branch;
   late NumberFormat real;
   late Map<String, String> loc;
 
@@ -48,7 +47,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
           onPressed: () async {
             await showSearch(
               context: context,
-              delegate: IntegratorSearchDelegate(integrators: tabela),
+              delegate: IntegratorSearchDelegate(branch: tabela),
             );
           },
         ),
@@ -66,7 +65,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
     );
   }
 
-  mostrarDetalhes(Integrators integrator) {
+  mostrarDetalhes(BranchModel branch) {
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -82,7 +81,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => MoedasDetalhesPage(moeda: integrator),
+          builder: (_) => BranchDetalhesPage(branch: branch),
         ),
       );
     });
@@ -90,15 +89,15 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
 
   @override
   Widget build(BuildContext context) {
-    integrators = Provider.of<IntegratorsRepository>(context);
-    tabela = IntegratorsRepository.tabela;
+    branch = Provider.of<BranchRepository>(context);
+    tabela = BranchRepository.filiais;
 
     readNumberFormat();
     return Scaffold(
       appBar: appApbarDinamica(),
       body: ListView.separated(
-        itemBuilder: (BuildContext context, int integrator) {
-          final isActive = tabela[integrator]
+        itemBuilder: (BuildContext context, int branch) {
+          final isActive = tabela[branch]
               .isActive; // Variável que recebe o estado de ativo/inativo
           return ListTile(
             shape: const RoundedRectangleBorder(
@@ -106,13 +105,13 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
             ),
             leading: SizedBox(
               width: 40,
-              child: Image.network(tabela[integrator].icone),
+              child: Image.network(tabela[branch].icone),
             ),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  tabela[integrator].name,
+                  tabela[branch].name,
                   style: const TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
@@ -120,7 +119,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'CNPJ: ${tabela[integrator].cnpj}',
+                  'CNPJ: ${tabela[branch].cnpj}',
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
@@ -137,7 +136,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
                 ),
               ],
             ),
-            onTap: () => mostrarDetalhes(tabela[integrator]),
+            onTap: () => mostrarDetalhes(tabela[branch]),
           );
         },
         padding: const EdgeInsets.all(16),
@@ -149,9 +148,9 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
 }
 
 class IntegratorSearchDelegate extends SearchDelegate {
-  final List<Integrators> integrators;
+  final List<BranchModel> branch;
 
-  IntegratorSearchDelegate({required this.integrators});
+  IntegratorSearchDelegate({required this.branch});
 
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -177,24 +176,24 @@ class IntegratorSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    final List<Integrators> result = integrators
-        .where((integrator) =>
-            integrator.name.toLowerCase().contains(query.toLowerCase()))
+    final List<BranchModel> result = branch
+        .where(
+            (branch) => branch.name.toLowerCase().contains(query.toLowerCase()))
         .toList();
 
     return ListView.separated(
       itemCount: result.length,
       itemBuilder: (BuildContext context, int index) {
-        final integrator = result[index];
+        final branch = result[index];
         return ListTile(
-          leading: Image.network(integrator.icone),
-          title: Text(integrator.name),
+          leading: Image.network(branch.icone),
+          title: Text(branch.name),
           onTap: () {
             close(context, null);
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => MoedasDetalhesPage(moeda: integrator),
+                builder: (_) => BranchDetalhesPage(branch: branch),
               ),
             );
           },
@@ -206,20 +205,20 @@ class IntegratorSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final List<Integrators> suggestionList = integrators
-        .where((integrator) =>
-            integrator.name.toLowerCase().contains(query.toLowerCase()))
+    final List<BranchModel> suggestionList = branch
+        .where(
+            (branch) => branch.name.toLowerCase().contains(query.toLowerCase()))
         .toList();
 
     return ListView.separated(
       itemCount: suggestionList.length,
       itemBuilder: (BuildContext context, int index) {
-        final integrator = suggestionList[index];
+        final branch = suggestionList[index];
         return ListTile(
-          leading: Image.network(integrator.icone),
-          title: Text(integrator.name),
+          leading: Image.network(branch.icone),
+          title: Text(branch.name),
           onTap: () {
-            query = integrator.name;
+            query = branch.name;
             showResults(context);
           },
         );

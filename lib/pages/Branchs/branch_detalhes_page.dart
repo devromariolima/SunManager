@@ -1,16 +1,16 @@
 import 'package:cripto/models/branch_model.dart';
 import 'package:flutter/material.dart';
 
-class MoedasDetalhesPage extends StatefulWidget {
+class BranchDetalhesPage extends StatefulWidget {
   final BranchModel branch;
 
-  const MoedasDetalhesPage({super.key, required this.branch});
+  const BranchDetalhesPage({super.key, required this.branch});
 
   @override
-  State<MoedasDetalhesPage> createState() => _MoedasDetalhesPageState();
+  State<BranchDetalhesPage> createState() => _BranchDetalhesPage();
 }
 
-class _MoedasDetalhesPageState extends State<MoedasDetalhesPage> {
+class _BranchDetalhesPage extends State<BranchDetalhesPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nomeEmpresa = TextEditingController();
   final TextEditingController _taxId = TextEditingController();
