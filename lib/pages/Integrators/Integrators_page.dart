@@ -118,7 +118,7 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 8), // Espaço entre o nome e o CNPJ
+                const SizedBox(height: 8),
                 Text(
                   'CNPJ: ${tabela[integrator].cnpj}',
                   style: const TextStyle(
@@ -126,15 +126,13 @@ class _IntegratorsPageState extends State<IntegratorsPage> {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const SizedBox(height: 8), // Espaço entre o CNPJ e o status
+                const SizedBox(height: 8),
                 Text(
-                  isActive ? 'Ativo' : 'Inativo', // Exibe "Ativo" ou "Inativo"
+                  isActive ? 'Ativo' : 'Inativo',
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
-                    color: isActive
-                        ? Colors.green
-                        : Colors.red, // Verde para ativo, vermelho para inativo
+                    color: isActive ? Colors.green : Colors.red,
                   ),
                 ),
               ],

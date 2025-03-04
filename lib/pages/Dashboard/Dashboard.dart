@@ -30,10 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 50),
-                // Usando Row para alinhar o ícone à direita
                 Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.end, // Alinha o ícone à direita
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     IconButton(
                       icon: const Icon(Icons.menu, color: Colors.white),
@@ -45,8 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               alignment: Alignment.centerLeft,
                               child: FractionallySizedBox(
                                 widthFactor: 0.8,
-                                child:
-                                    Navbar(), // Chamada da Navbar ao clicar no ícone de menu
+                                child: Navbar(),
                               ),
                             );
                           },
@@ -183,22 +180,16 @@ class _HomeScreenState extends State<HomeScreen> {
       String title, IconData iconData, Color background, VoidCallback onTap) {
     return GestureDetector(
       onTap: () async {
-        // Exibe o loading antes de executar a ação
         showDialog(
           context: context,
-          barrierDismissible:
-              false, // Impede que o loading seja fechado ao clicar fora
+          barrierDismissible: false,
           builder: (context) =>
               const Center(child: CircularProgressIndicator()),
         );
 
-        // Simula um tempo de carregamento
         await Future.delayed(const Duration(seconds: 2));
 
-        // Fecha o loading
         Navigator.pop(context);
-
-        // Chama a função onTap após o tempo de carregamento
         onTap();
       },
       child: Container(
