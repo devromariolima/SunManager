@@ -56,6 +56,7 @@ class _FavoritasPageState extends State<FavoritasPage> {
                 itemBuilder: (_, index) {
                   final pedido = pedidos[index];
                   return MoedaCard(
+                    uid: pedido.uid,
                     valor: pedido.valor,
                     cliente: pedido.cliente,
                     integrador: pedido.integrador,
@@ -69,6 +70,7 @@ class _FavoritasPageState extends State<FavoritasPage> {
 }
 
 class MoedaCard extends StatelessWidget {
+  final String uid;
   final String valor;
   final String cliente;
   final String integrador;
@@ -76,6 +78,7 @@ class MoedaCard extends StatelessWidget {
 
   const MoedaCard({
     Key? key,
+    required this.uid,
     required this.valor,
     required this.cliente,
     required this.integrador,
@@ -97,6 +100,13 @@ class MoedaCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      'Numero do pedido: $uid',
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                     Text(
                       'Valor do Pedido: $valor',
                       style: const TextStyle(

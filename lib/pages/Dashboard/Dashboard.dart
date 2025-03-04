@@ -124,6 +124,15 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) => const IntegratorsPage())),
                   ),
                   itemDashboard(
+                    'Pedidos',
+                    CupertinoIcons.square_favorites,
+                    Colors.blue,
+                    () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const FavoritasPage())),
+                  ),
+                  itemDashboard(
                     'Meu Perfil',
                     CupertinoIcons.person,
                     Colors.brown,
@@ -149,15 +158,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ConfiguracoesPage())),
-                  ),
-                  itemDashboard(
-                    'Pedidos',
-                    CupertinoIcons.square_favorites,
-                    Colors.blue,
-                    () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const FavoritasPage())),
                   ),
                   itemDashboard(
                     'Contato',
