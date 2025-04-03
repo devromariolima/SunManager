@@ -4,7 +4,7 @@ class BranchRepository {
   static List<BranchModel> filiais = [
     BranchModel(
       uid: '1',
-      name: 'PROMOÇÕES',
+      name: 'Sinop',
       address: 'Av. Paulista, 1000',
       city: 'São Paulo',
       zipcode: '01310-100',
@@ -18,7 +18,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '2',
-      name: 'NAVEGANTES',
+      name: 'Sorriso',
       address: 'Rua Copacabana, 200',
       city: 'Rio de Janeiro',
       zipcode: '22050-001',
@@ -32,7 +32,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '3',
-      name: 'ITAPEVI',
+      name: 'Lucas do rio verde',
       address: 'Av. Afonso Pena, 300',
       city: 'Belo Horizonte',
       zipcode: '30130-001',
@@ -46,7 +46,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '4',
-      name: 'USINAS',
+      name: 'Rio de janeiro',
       address: 'Rua das Flores, 400',
       city: 'Curitiba',
       zipcode: '80010-010',
@@ -60,7 +60,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '5',
-      name: 'PERNAMBUCO',
+      name: 'Cuiabá',
       address: 'Av. Borges de Medeiros, 500',
       city: 'Porto Alegre',
       zipcode: '90010-150',
@@ -74,7 +74,7 @@ class BranchRepository {
     ),
     BranchModel(
       uid: '5',
-      name: 'ITUPEVA',
+      name: 'Santa Carmem',
       address: 'Av. Borges de Medeiros, 500',
       city: 'Porto Alegre',
       zipcode: '90010-150',
