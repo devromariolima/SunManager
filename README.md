@@ -30,3 +30,10 @@
 
 - Provider (Gerenciamento de estado)
 
+<img src="https://i.imgur.com/T1EVy0Z.png" alt="Desktop Screenshot" width="500" height="500"/>
+
+<img src="https://i.imgur.com/bKnA4XC.png" alt="Desktop Screenshot" width="500" height="500"/>
+
+<img src="https://i.imgur.com/D15rNoG.png" alt="Desktop Screenshot" width="500" height="500"/>
+
+<img src="https://i.imgur.com/FtlRDUF.png" alt="Desktop Screenshot" width="500" height="500"/>
