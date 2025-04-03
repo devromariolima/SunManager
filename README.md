@@ -40,3 +40,6 @@
 
 
 ### Acesse o projeto: [[Link do deploy](https://esfera-admin-3c6k.vercel.app/)]
+
+- usuario: teste1@teste.com
+- senha: 1234567
