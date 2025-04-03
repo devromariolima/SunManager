@@ -9,7 +9,7 @@ class MeuAplicativo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Esfera Admin',
+      title: 'SunManager',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
