@@ -41838,7 +41838,7 @@ return s},
 $S:449}
 A.MK.prototype={
 J(a){var s=null
-return new A.AE(B.Aq,"Esfera Admin",A.vB(s,s,B.ar,s),!1,s)}}
+return new A.AE(B.Aq,"SunManager",A.vB(s,s,B.ar,s),!1,s)}}
 A.u5.prototype={
 dv(){var s=this,r=s.r
 return A.ae(["name",s.a,"address",s.b,"city",s.c,"zipCode",s.d,"cnpj",s.e,"icon",s.f,"phone",r,"email",r,"isActive",s.x,"observation",s.y],t.N,t.z)}}
