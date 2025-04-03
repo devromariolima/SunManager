@@ -17,3 +17,16 @@
 - Gerenciamento de integradores.
 
 - Gerenciamento de pedidos.
+
+## 📱 Multiplataforma & Offline-First
+- Funciona em Android, iOS e Web (responsivo).
+
+- Autenticação segura (Firebase Auth, OAuth2).
+
+## 🛠️ Tecnologias Utilizadas
+- Flutter (Framework multiplataforma)
+
+- Firebase (Autenticação, Firestore, Cloud Functions)
+
+- Provider (Gerenciamento de estado)
+
