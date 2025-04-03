@@ -39,7 +39,7 @@
 <img src="https://i.imgur.com/FtlRDUF.png" alt="Desktop Screenshot" width="250" height="500"/>
 
 
-### Acesse o projeto: [[Link do deploy](https://esfera-admin-3c6k.vercel.app/)]
+### Acesse o projeto: [[Link do deploy](https://sun-manager.vercel.app/)]
 
 - usuario: teste1@teste.com
 - senha: 1234567
