@@ -1,1 +1,19 @@
-# EsferaAdmin
+# SunManager
+
+## SunManager - Sistema de Gerenciamento para Integradores de Energia Solar
+## 📌 Visão Geral:
+
+- O SolarSync é uma aplicação desenvolvida em Flutter para gerenciamento de empresas integradoras de energia solar, oferecendo um dashboard completo, controle de pedidos, clientes, projetos e equipes técnicas. A solução foi projetada para otimizar processos, aumentar a produtividade e fornecer insights estratégicos para empresas do setor fotovoltaico.
+
+
+## ✨ Principais Funcionalidades
+
+- 📊 Dashboard Inteligente
+
+- Visualização de métricas em tempo real (vendas, instalações, faturamento).
+
+- Gerenciamento de estoque.
+
+- Gerenciamento de integradores.
+
+- Gerenciamento de pedidos.
