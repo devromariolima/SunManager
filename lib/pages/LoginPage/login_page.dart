@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       isLogin = acao;
       if (isLogin) {
-        titulo = 'Esfera Admin';
+        titulo = 'SunManager';
         actionButton = 'Login';
         toggleButton = 'Ainda não tem conta? Cadastre-se agora!';
       } else {
