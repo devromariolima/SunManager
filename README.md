@@ -16,8 +16,9 @@
 
 - Gerenciamento de pedidos.
 
-## 📱 Multiplataforma & Offline-First
-- Funciona em Android, iOS e Web (responsivo).
+## 📱 Multiplataforma
+
+- Funciona em Android, iOS e Web.
 
 - Autenticação segura (Firebase Auth, OAuth2).
 
